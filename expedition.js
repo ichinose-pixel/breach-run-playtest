@@ -74,8 +74,8 @@ function updateMissionHud(){const active=expeditionActive()&&['playing','paused'
 const expeditionUpdate=update;
 update=function(dt){
  if(expeditionActive()&&state==='playing'){
-  const r=expeditionRun;for(const o of objects){if(o.role==='relay'&&!o.dead){o.z=o.anchor;if(o.z-distance<3){o.dead=true;r.missed++;toast('中継塔を通過 / 次の標的へ','#b7cad7');}}if(o.type==='boss'){o.attack=-100;o.warn=false;}}
-  const boss=objects.find(o=>o.type==='boss'&&!o.dead);if(boss&&boss.z-distance<39){r.bossClock+=dt;const cycle=Math.floor(r.bossClock/8),t=r.bossClock%8;if(cycle!==r.bossCycle){r.bossCycle=cycle;r.bossAim=px;r.bossFired=false;battleAudio.effect('warn');}
+  const r=expeditionRun;for(const o of objects){if(o.role==='relay'&&!o.dead){o.z=o.anchor;if(o.z-distance<3){o.dead=true;r.missed++;toast('中継塔を通過 / 次の標的へ','#b7cad7');}}if(o.type==='boss'){o.attack=-100;if(!o.finalCitadel)o.warn=false;}}
+  const boss=objects.find(o=>o.type==='boss'&&!o.dead);if(boss&&!boss.finalCitadel&&boss.z-distance<39){r.bossClock+=dt;const cycle=Math.floor(r.bossClock/8),t=r.bossClock%8;if(cycle!==r.bossCycle){r.bossCycle=cycle;r.bossAim=px;r.bossFired=false;battleAudio.effect('warn');}
    r.bossPhase=t<3.1?'shield':'core';boss.weakSide=cycle%2?.38:-.38;boss.x+=( (r.bossPhase==='core'?boss.weakSide:0)-boss.x)*Math.min(1,dt*2.5);
    boss.warn=t<2;boss.aim=r.bossAim;boss.aim2=level===10&&r.secondCore?(r.bossAim>0?-.55:.55):EXPEDITIONS[level].relayGoal&&r.relays<EXPEDITIONS[level].relayGoal?boss.weakSide:null;
    if(t>=2&&!r.bossFired){r.bossFired=true;objects.push({type:'hazard',x:r.bossAim,z:boss.z-2,dead:false});if(boss.aim2!==null)objects.push({type:'hazard',x:boss.aim2,z:boss.z-2,dead:false});battleAudio.effect('boom');}
@@ -95,8 +95,6 @@ drawObject=function(o){if(!expeditionActive())return expeditionObject(o);const r
  if(o.type==='gate'){expeditionObject(o);if(gateNumberVisible(o)&&rel<30)txt(o.value>=reinforcementCap()?'増援 MAX':'上限 +'+reinforcementCap(),p.x,p.y+13*s,Math.max(11,12*s),'#b5e6f3');return;}
  expeditionObject(o);
 };
-const expeditionChoice=drawPickupChoice;
-drawPickupChoice=function(o){if(!expeditionActive()||!o.rescue)return expeditionChoice(o);const rel=o.z-distance;if(rel<-.5||rel>34)return;const p=project(o.x,rel),s=p.s,w=W*.39*s;round(p.x-w/2,p.y-45*s,w,66*s,5*s,'#292d35','#ffd494');txt('救難機 回収',p.x,p.y-26*s,Math.max(12,14*s),'#ffe3ac');if(rel<18)txt('接触で救出 + 護衛',p.x,p.y+5*s,Math.max(11,12*s),'#eee1c9');};
 const expeditionRenderHangar=renderHangar;
 renderHangar=function(){expeditionRenderHangar();$('hangar').classList.add('foundry');let bay=$('hangarBay');if(!bay){bay=document.createElement('section');bay.id='hangarBay';$('materialCount').before(bay);}const installed=arsenal.installed||[];const selected=MACHINES.find(m=>m.id===chosenMachine);bay.innerHTML='<div class="hangar-platform">'+machineSVG(chosenMachine,installed)+'<span>'+selected.name+' / '+selected.tag+'</span></div><div class="module-rack">'+Object.entries(RELICS).map(([id,r])=>'<div class="module-slot '+(installed.includes(id)?'installed':relicOwned(id)?'ready':'locked')+'"><div class="slot-gear">'+(typeof relicSVG==='function'?relicSVG(id):r.icon)+'</div><span>'+r.short+'</span><small>'+(installed.includes(id)?((id==='prism'?arsenal.relics[id]?.relays:arsenal.relics[id]?.rescued)===3?'完全達成 / 装着中':'装着中'):relicOwned(id)?'装着できます':id==='prism'?'作戦05で獲得':'作戦10で獲得')+'</small><i class="mastery-pips" aria-label="任務の達成数">'+[0,1,2].map(n=>'<em class="'+(n<(id==='prism'?arsenal.relics?.[id]?.relays||0:arsenal.relics?.[id]?.rescued||0)?'earned':'')+'"></em>').join('')+'</i></div>').join('')+'</div>';
  for(const card of $('machineCards').children){const id=card.querySelector('[data-equip],[data-trial],[data-unlock]')?.dataset;const key=id?.equip||id?.trial||id?.unlock;if(key)card.querySelector('.machine-symbol').innerHTML=machineSVG(key,installed,true);}

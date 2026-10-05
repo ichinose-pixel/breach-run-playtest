@@ -47,8 +47,4 @@ drawObject=function(o){const rel=o.z-distance;if(rel>110||rel<-.5)return;const p
  if(o.type!=='pickup')return refinedObject(o);
  if(rel>34){const color=o.kind==='reinforce'?'#91f5df':runMachine.color,w=Math.max(12,22*s),h=Math.max(10,17*s);round(p.x-w/2,p.y-h,w,h,3,'#102c43',color);txt(o.kind==='reinforce'?'+':'◆',p.x,p.y-h/2,Math.max(10,12*s),color);}
 };
-// Choice text is the final canvas layer, above shots and effects, on an opaque plate.
-function drawPickupChoice(o){const rel=o.z-distance;if(rel>34||rel<-.5)return;const p=project(o.x,rel),s=p.s,reinforce=o.kind==='reinforce',color=reinforce?'#91f5df':runMachine.color,w=W*.39*s;
- round(p.x-w/2,p.y-45*s,w,(rel<18?66:39)*s,5*s,'#102c43',color);const label=reinforce?'増援 +20':({wide:'ワイド弾',pierce:'貫通弾',blast:'榴弾支援'})[o.kind];txt(label,p.x,p.y-26*s,Math.max(12,14*s),color);
- if(rel<18){const detail=reinforce?'部隊に20人合流':runMachine.evo[['wide','pierce','blast'].indexOf(o.kind)];txt(detail,p.x,p.y+5*s,Math.max(11,12*s),'#d2e7f0');}}
-const refinedDraw=draw;draw=function(dt){refinedDraw(dt);if(!['playing','paused'].includes(state))return;for(const o of objects)if(o.type==='pickup'&&!o.dead)drawPickupChoice(o);};
+// Choice previews and detail plates are owned by decisions.js.
