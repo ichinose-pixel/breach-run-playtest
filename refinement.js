@@ -6,8 +6,8 @@ let lesson=null,joiners=[],joinPulse=0,movedInRun=false,noticeQueue=[],noticeLef
 const coach=document.createElement('aside');coach.id='fieldCoach';coach.hidden=true;coach.setAttribute('role','status');
 coach.innerHTML='<b></b><span></span>';$('app').append(coach);
 function teach(title,detail){coach.hidden=false;coach.firstElementChild.textContent=title;coach.lastElementChild.textContent=detail;}
-function fieldMode(){const playing=state==='playing';$('app').classList.toggle('teaching',playing&&!!lesson);coach.style.visibility=playing?'visible':'hidden';}
-const refinedStart=start,refinedUpdate=update,refinedChangeArmy=changeArmy,refinedDrawArmy=drawArmy,refinedHUD=updateHUD,refinedToast=toast;
+function fieldMode(){const playing=state==='playing';$('app').classList.toggle('combat-mode',['playing','paused'].includes(state));$('app').classList.toggle('teaching',playing&&!!lesson);coach.style.visibility=playing?'visible':'hidden';}
+const refinedStart=start,refinedUpdate=update,refinedChangeArmy=changeArmy,refinedHUD=updateHUD,refinedToast=toast;
 toast=function(message,color){if(/^RUSH!/.test(message))return;if(state==='playing'){if(/危険|予告|照準|WARNING/.test(message)){refinedToast(message,color);noticeLeft=1.7;return;}noticeQueue.push({message,color});noticeQueue=noticeQueue.slice(-3);}else refinedToast(message,color);};
 const refinedFloating=floating;floating=function(text,x,z,color){if(/COMBO/.test(text))return;refinedFloating(text,x,z,color);};
 start=function(n=level){lesson=null;noticeQueue=[];noticeLeft=0;joiners=[];joinPulse=0;movedInRun=false;refinedStart(n);noticeQueue=[];
@@ -27,13 +27,6 @@ update=function(dt){if(state!=='playing'){fieldMode();return;}const held=lesson?
  else if(lesson.phase==='join'&&lesson.clock>2.5){lesson=null;lessonSeen=true;try{localStorage.setItem(lessonKey,'done')}catch{}makeLevel();objects=objects.filter(o=>o.z>12);distance=14;coach.hidden=true;noticeQueue=[];}
  }else{if(movedInRun||elapsed>7)coach.hidden=true;if(noticeLeft<=0&&noticeQueue.length){const next=noticeQueue.shift();refinedToast(next.message,next.color);noticeLeft=1.7;}noticeLeft-=dt;}
  fieldMode();};
-drawArmy=function(){if(!['playing','paused'].includes(state))return refinedDrawArmy();if(army<=0)return;const visible=Math.min(army,30),cols=army<10?Math.ceil(Math.sqrt(visible)):army<25?5:army<50?6:army<100?7:8,scale=clamp(W/420,.75,1.2),spread=army>=100?22:army>=50?21:19;
- const center=clamp(W/2+px*W*.43,cols*spread*scale/2+9,W-cols*spread*scale/2-9),base=H*.74;
- ctx.save();ctx.strokeStyle=army>=100?'#ffe1a188':'#70daf26b';ctx.lineWidth=2;ctx.beginPath();ctx.ellipse(center,base+18*scale,Math.min(98,(cols*spread/2+9))*scale,(army>=50?40:30)*scale,0,0,Math.PI*2);ctx.stroke();ctx.restore();
- for(let i=0;i<visible;i++){let row=Math.floor(i/cols),col=i%cols,cnt=Math.min(cols,visible-row*cols);unit(center+(col-(cnt-1)/2)*spread*scale+(row%2?3:0),base+row*12*scale,scale*1.18,'#399feb',i*.7);}
- if(support>0){round(center-15,base-26,30,20,5,'#947343','#ffe0a0');round(center-5,base-42,10,28,3,'#d9bd8b');}
- for(const p of joiners){const t=p.life/p.duration,e=1-Math.pow(1-t,3);let x=center+p.side*(W*.45*(1-e)+(p.index%4)*9),y=base+45*(1-e)+(p.index%3)*12;ctx.save();ctx.globalAlpha=Math.min(1,t*5)*(1-t*.35);unit(x,y,scale,'#399feb',p.index);ctx.restore();}
-};
 const refinedHome=home;home=function(){lesson=null;coach.hidden=true;noticeQueue=[];refinedHome();fieldMode();};
 // Existing handlers that captured function values are rebound to the refined flow.
 $('home').onclick=home;$('pauseHome').onclick=home;
@@ -47,4 +40,6 @@ drawObject=function(o){const rel=o.z-distance;if(rel>110||rel<-.5)return;const p
  if(o.type!=='pickup')return refinedObject(o);
  if(rel>34){const color=o.kind==='reinforce'?'#91f5df':runMachine.color,w=Math.max(12,22*s),h=Math.max(10,17*s);round(p.x-w/2,p.y-h,w,h,3,'#102c43',color);txt(o.kind==='reinforce'?'+':'◆',p.x,p.y-h/2,Math.max(10,12*s),color);}
 };
-// Choice previews and detail plates are owned by decisions.js.
+// World-space choices are owned by decisions.js.
+
+// Combat actors and their weapons share the projectile origin. No portrait layer.
