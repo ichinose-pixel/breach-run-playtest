@@ -1,0 +1,28 @@
+/* Mobile combat information stays outside the approach to the squad. */
+.premium header{top:max(12px,env(safe-area-inset-top));left:16px;right:16px;height:44px}
+.premium .top-actions{gap:6px}
+.premium .top-actions button{min-width:44px;min-height:44px;font-size:12px;padding:8px}
+.premium .brand{font-size:10px;letter-spacing:1px}
+.premium .hud{top:66px;left:16px;right:16px;padding:9px 12px;height:59px;box-sizing:border-box;align-items:center}
+.premium .hud small{font-size:11px;letter-spacing:1px}
+.premium .hud strong{font-size:27px;line-height:1.05}
+.premium .hud .army{display:flex;align-items:center;gap:9px}
+.premium #weaponHud{top:131px;left:18px;right:18px;height:25px;padding:3px 7px;background:#071b29d9;border:0;border-radius:4px;font-size:12px;box-shadow:none;box-sizing:border-box}
+.premium #weaponType{font-size:12px}.premium #weaponName{font-size:13px}.premium #combo{font-size:12px;color:#f9d599}
+.premium #rushHud{top:auto;bottom:max(16px,env(safe-area-inset-bottom));left:18px;right:18px;padding:7px 10px;border:0;background:#071b29e8;pointer-events:none}
+.premium #rushHud b,.premium #rushHud span{font-size:12px}
+.premium #rushHud .rushtrack{height:3px;margin-top:5px}
+.premium #toast{top:auto;bottom:106px;left:18px;right:18px;width:auto;transform:none;font-size:15px;line-height:1.5;padding:8px 12px;border:1px solid #88e8db55;border-radius:8px;background:#071c2ff2;pointer-events:none}
+.premium #hint,.premium #touchZone,.premium #footer{display:none!important}
+#fieldCoach{position:absolute;z-index:9;bottom:65px;left:18px;right:18px;background:#081d2ff2;border:1px solid #70d8ee75;border-radius:10px;padding:12px 14px;pointer-events:none;box-shadow:0 8px 24px #0004}
+#fieldCoach b{display:block;font-size:17px;line-height:1.45;color:#dffbff}#fieldCoach span{display:block;font-size:13px;line-height:1.5;color:#aacee0;margin-top:2px}
+.premium.teaching #toast{opacity:0!important}.premium.teaching #rushHud{visibility:hidden}
+.premium .stage-help,.premium .stage-card span:last-child,.premium .result p,.premium #resultProgress{font-size:13px}
+.premium .stats small,.premium #medals small{font-size:12px}.premium .textbutton{font-size:14px;min-height:44px}
+@media(max-height:700px){.premium .hud{top:61px;height:49px}.premium #weaponHud{top:114px}#fieldCoach{bottom:53px;padding:8px 12px}#fieldCoach b{font-size:15px}.premium #toast{bottom:88px}}
+@media(max-width:350px){.premium .brand{font-size:9px;letter-spacing:.3px;white-space:nowrap}.premium .top-actions button{font-size:11px;padding:6px;white-space:nowrap}}
+/* Move the whole information band with the device safe area, not only its header. */
+:root{--combat-top:max(0px,calc(env(safe-area-inset-top,0px) - 12px));--combat-bottom:max(0px,calc(env(safe-area-inset-bottom,0px) - 16px))}
+.premium .hud{top:calc(66px + var(--combat-top))}.premium #weaponHud{top:calc(131px + var(--combat-top))}
+#fieldCoach{bottom:calc(65px + var(--combat-bottom))}.premium #toast{bottom:calc(106px + var(--combat-bottom))}
+@media(max-height:700px){.premium .hud{top:calc(61px + var(--combat-top))}.premium #weaponHud{top:calc(114px + var(--combat-top))}#fieldCoach{bottom:calc(53px + var(--combat-bottom))}.premium #toast{bottom:calc(88px + var(--combat-bottom))}}
