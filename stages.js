@@ -138,3 +138,10 @@ for(const stage of STAGES)for(const o of stage.objects)if(o.type==='gate'&&o.row
 
 // Final-band existing escorts arrive during the command vehicle engagement. No added force or HP.
 for(const o of STAGES[9].objects){const shift={23:24.2,25:27,25.6:31.2,28:30.6}[o.spawnAt];if(shift!==undefined&&!o.boss)o.spawnAt=shift;}
+
+// Unpublished two-band cover experiment. Initial triple row is before enemy arrival;
+// later rows always leave a full firing lane. Growth and +1 break panels are distinct.
+for(const i of [0,9]){const stage=STAGES[i];stage.objects=stage.objects.filter(o=>!['gate','panel'].includes(o.type));const grow=(d,x,value)=>({type:'gate',d,x,value,rowGate:true,halfWidth:.975,growing:true,blockShots:true});stage.objects.push(...[3,5,-2].map((v,k)=>grow(10,(k-1)*2.45,v)));if(i===0)stage.objects.push(...chain(25,-2.45,4),grow(42,-2.45,-2),grow(42,2.45,3),grow(66,-2.45,-3),...chain(66,0,4));else stage.objects.push(...chain(32,-2.45,5),grow(45,-2.45,-2),grow(45,2.45,3),grow(65,0,3),...chain(69,2.45,5));const boss=stage.objects.find(o=>o.boss);boss.closeAssault=true;boss.stopZ=i===0?-1.8:-2.4;boss.approach=i===0?3.7:5.8;stage.tip='成長板を育てるか、空き列から敵を撃つか。＋1板は壊すと増援。';}
+
+// All representative bands share three distinct panel roles, without changing enemies or HP.
+for(const i of [1,2,3,4,5,6,7,8]){const stage=STAGES[i],side=i%2?1:-1,shift=(i%3)*2;stage.objects=stage.objects.filter(o=>!['gate','panel'].includes(o.type));const grow=(d,x,value)=>({type:'gate',d,x,value,rowGate:true,halfWidth:.975,growing:true,blockShots:true});stage.objects.push(...[3,5,-2].map((v,k)=>grow(10,(k-1)*2.45,v)),...chain(26+shift,side*2.45,i<3?4:5),grow(43+shift,-side*2.45,-2),grow(43+shift,side*2.45,3),grow(66+shift,0,3),...chain(70+shift,-side*2.45,5));const boss=stage.objects.find(o=>o.boss);boss.closeAssault=true;boss.stopZ=boss.bossKind==='rammer'?-9:boss.bossKind==='captain'?-1.8:-2.4;boss.approach=boss.bossKind==='captain'?3.7:5.8;stage.tip='成長板を育てるか、空き列から敵を撃つか。＋1板は壊すと増援。';}
