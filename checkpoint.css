@@ -1,7 +1,0 @@
-#recoveryMenu{z-index:30;gap:16px;justify-content:center;padding:calc(64px + env(safe-area-inset-top)) 24px calc(32px + env(safe-area-inset-bottom));box-sizing:border-box}
-#recoveryMenu h2{font-size:28px;margin:0}#recoveryDetail{font-size:16px;line-height:1.8;color:#d2e7f0;white-space:pre-line;margin:0 0 8px}
-#recoveryMenu button{min-height:48px;font-size:16px;width:100%}
-#recoveryHelp{font-size:14px;line-height:1.6;color:#d2e7f0;margin:0}#recoveryHelp small{display:block;font-size:12px;color:#aacee0;margin-top:5px}
-#checkpointMessage{position:absolute;z-index:40;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));margin:0;padding:12px;border:1px solid #e5bc79;border-radius:8px;background:#152b3cf5;color:#ffe4b4;font-size:13px;line-height:1.6;pointer-events:none}
-#checkpointMessage[hidden]{display:none}
-@media(max-height:700px){#recoveryMenu{gap:12px;padding-left:20px;padding-right:20px}#recoveryMenu h2{font-size:25px}}

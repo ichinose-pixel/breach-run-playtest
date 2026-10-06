@@ -1,5 +1,11 @@
-# Breach Run playtest
+# Breach Run / ブリーチラン
 
-Static release from commit `d8be104fbb4a0faae6adcc9cef810dd8ab0b8093`.
+左右にドラッグして狙い、仲間を増やして突破する3Dシューティングの10ステージ試遊版です。射撃は自動です。
 
-Publish the contents of this ZIP at the repository root, preserving the assets directory. Open index.html through a static web server.
+`index.html` が入口です。HTTPサーバーでこのフォルダーを配信してください。GitHub Pagesの `/breach-run-playtest/` 配下でも動作する相対パス構成です。ビルドや外部APIキーは不要です。
+
+進行はブラウザに保存されます。中断後はタイトルの「中断した作戦へ」から再開できます。「新規開始」はステージ1を始め、獲得済みの記録は保持します。音はタイトルで切り替えます。
+
+3D用保存キーは `breach-run-3d-playtest-v1` です。旧2D版の保存データには触れません。
+
+素材とライブラリの出典は `THIRD_PARTY_NOTICES.txt`、Three.jsのMIT許諾文は `vendor/LICENSE` に記載しています。
