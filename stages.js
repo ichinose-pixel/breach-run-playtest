@@ -145,3 +145,12 @@ for(const i of [0,9]){const stage=STAGES[i];stage.objects=stage.objects.filter(o
 
 // All representative bands share three distinct panel roles, without changing enemies or HP.
 for(const i of [1,2,3,4,5,6,7,8]){const stage=STAGES[i],side=i%2?1:-1,shift=(i%3)*2;stage.objects=stage.objects.filter(o=>!['gate','panel'].includes(o.type));const grow=(d,x,value)=>({type:'gate',d,x,value,rowGate:true,halfWidth:.975,growing:true,blockShots:true});stage.objects.push(...[3,5,-2].map((v,k)=>grow(10,(k-1)*2.45,v)),...chain(26+shift,side*2.45,i<3?4:5),grow(43+shift,-side*2.45,-2),grow(43+shift,side*2.45,3),grow(66+shift,0,3),...chain(70+shift,-side*2.45,5));const boss=stage.objects.find(o=>o.boss);boss.closeAssault=true;boss.stopZ=boss.bossKind==='rammer'?-9:boss.bossKind==='captain'?-1.8:-2.4;boss.approach=boss.bossKind==='captain'?3.7:5.8;stage.tip='成長板を育てるか、空き列から敵を撃つか。＋1板は壊すと増援。';}
+
+// v16 pressure tuning; fresh runs only, no HP floors or invulnerability.
+for(const i of [4,6,9])for(const o of STAGES[i].objects)if(o.boss)o.hp=Math.round(o.hp*1.2);
+
+// v17: only band08. Always damageable; three aimed volleys and breakable side armor.
+for(const o of STAGES[7].objects)if(o.boss){o.hp=650;o.attackPattern='rotor';o.plateWeakSide=1;}
+
+// Cargo guards stay in front of the vehicle, so their protection can always be removed.
+for(const o of STAGES[7].objects)if(o.escort)o.stopZ=-1.2;
