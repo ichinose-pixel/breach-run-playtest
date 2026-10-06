@@ -120,3 +120,10 @@ STAGES[8]=field('雪原要塞：重装のすきま','重装護衛の横へ。突
  bossAt(25,'rammer','ごつごつ突破車',310,{shotDamage:8}),specialist(27,-3.3,28,'runner'),specialist(28,3.3,28,'runner'),...squad(30,'split',12)
 ],theme('fortress','#bacbd0','#78919b','#d0e1e5'));
 
+
+// v8: two representative bands first. Gaps and outer shoulders remain traversable.
+const choiceRow=(d,values)=>values.map((value,i)=>({type:'gate',d,x:(i-1)*2.45,value,rowGate:true,halfWidth:.83,collectAt:5}));
+for(const i of [0,4]){const stage=STAGES[i];stage.objects=stage.objects.filter(o=>!['gate','panel'].includes(o.type));stage.objects.push(...choiceRow(10,[-3,-6,-9]),...choiceRow(i===0?42:44,[-10,-16,-7]),...choiceRow(i===0?66:68,[-20,-12,-28]),...choiceRow(i===0?86:96,[-16,-30,-22]));}
+
+// v9: apply the verified visible-contact gate rows to the remaining eight bands.
+for(const i of [1,2,3,5,6,7,8,9]){const stage=STAGES[i];stage.objects=stage.objects.filter(o=>!['gate','panel'].includes(o.type));const shift=i%3*2;stage.objects.push(...choiceRow(10,[-3,-6,-9]),...choiceRow(40+shift,[-10,-16,-7]),...choiceRow(65+shift,[-20,-12,-28]),...choiceRow(89+shift,[-16,-30,-22]));}
