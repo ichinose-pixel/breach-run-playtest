@@ -58,3 +58,5 @@ button.primary{border-radius:16px;border:2px solid #fff0ac;border-bottom:6px sol
 #panel.lobby .deployment:before{display:none}#panel.lobby .deployment h2{font-size:24px;margin:7px 0 14px}#panel.lobby .deployment .actions{gap:8px;margin-top:10px}#panel.lobby .deployment .actions button{font-size:12px;padding:8px 4px;min-height:48px}#panel.lobby .deployment .gesture{margin:10px 0 0;font-size:12px}
 #bossHUD{border:2px solid #e3b775;border-bottom:4px solid #815841;border-radius:12px;background:linear-gradient(135deg,#264652f5,#102c39f5);box-shadow:0 4px 0 #071e2a66;padding:8px 11px}#bossHUD strong{color:#ffe6a7}#bossHUD i{height:8px;border:1px solid #061f2a}
 @media(max-height:720px){#panel.lobby{padding:25px 15px 16px}#panel.lobby .brand h1{font-size:60px}#panel.lobby .deployment{padding:12px}#panel.lobby .deployment h2{font-size:21px}#panel.lobby .deployment .primary{min-height:54px;font-size:18px}}
+
+#battleFrame.major-gain .chain{color:#ffe099;text-shadow:0 3px #5a381b,0 0 16px #ffc557}#bossHUD[data-plates="1"]{border-color:#efb96c}#bossHUD[data-plates="2"]{border-color:#79eeee}

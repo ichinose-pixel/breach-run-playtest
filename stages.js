@@ -127,3 +127,14 @@ for(const i of [0,4]){const stage=STAGES[i];stage.objects=stage.objects.filter(o
 
 // v9: apply the verified visible-contact gate rows to the remaining eight bands.
 for(const i of [1,2,3,5,6,7,8,9]){const stage=STAGES[i];stage.objects=stage.objects.filter(o=>!['gate','panel'].includes(o.type));const shift=i%3*2;stage.objects.push(...choiceRow(10,[-3,-6,-9]),...choiceRow(40+shift,[-10,-16,-7]),...choiceRow(65+shift,[-20,-12,-28]),...choiceRow(89+shift,[-16,-30,-22]));}
+
+// Growing gates retain shot value until contact; +999 is the upper boundary.
+for(let i=0;i<STAGES.length;i++)for(const o of STAGES[i].objects){if(o.type==='gate'&&o.rowGate){o.growing=true;o.halfWidth=.975;delete o.collectAt;}if(o.type==='enemy'&&i<2&&!o.boss)o.approach=(o.approach||2.7)*.90;if(o.boss){o.hp=Math.round(o.hp*1.15);o.armorPhases=true;}}
+
+for(const stage of STAGES)for(const o of stage.objects)if(o.type==='gate'&&o.rowGate&&o.d===10)o.value=[3,5,-2][Math.round(o.x/2.45)+1];
+
+// Ten-hit charging uses smaller initial debts; the displayed negative value is the actual contact loss.
+for(const stage of STAGES)for(const o of stage.objects)if(o.type==='gate'&&o.rowGate&&o.d>10)o.value=-Math.max(1,Math.round(Math.abs(o.value)/5));
+
+// Final-band existing escorts arrive during the command vehicle engagement. No added force or HP.
+for(const o of STAGES[9].objects){const shift={23:24.2,25:27,25.6:31.2,28:30.6}[o.spawnAt];if(shift!==undefined&&!o.boss)o.spawnAt=shift;}
