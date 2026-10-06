@@ -35,3 +35,88 @@ for(let i=3;i<STAGES.length;i++){
  stage.pressure=true;stage.durationHint=i===3?29:32;
  stage.objects=[...support,...crowds,...specialists];
 }
+
+// Three representative decade-band prototypes. Other bands remain unchanged
+// until the representative strategies pass review.
+const squad=(at,formation,n=12,speed=6.8)=>Array.from({length:n},(_,i)=>{
+ const cols=formation==='line'?8:formation==='split'?6:4,row=Math.floor(i/cols),col=i%cols;
+ const x=formation==='line'?-3.5+col:formation==='split'?(col<3?-3.25+col*.65:1.95+(col-3)*.65):(col-1.5)*.8;
+ return {...e(0,x,4),spawnAt:at,spawnZ:-11-row*1.15,approach:speed,...(formation==='sweep'?{sweep:true,sweepPhase:i*.2}:{} )};
+});
+const specialist=(at,x,hp,role,extra={})=>({...e(0,x,hp,role),spawnAt:at,spawnZ:role==='runner'?-15:-19,approach:role==='runner'?9:5.4,...extra});
+const field=(name,tip,band,objects,theme)=>({name,tip,band,pressure:true,durationHint:45,startForce:3,objects,theme});
+STAGES[0]=field('草原：分隊突破','紫の盾は横から。接近する斥候を先に止める。','01–10',[
+ g(10,-2.2,-8),...chain(18,-2.2,4),r(28,2.3,12,8),r(49,-2.3,18,7),
+ ...squad(4.8,'line',16),specialist(7,-1.2,38,'shield'),specialist(7,1.2,38,'shield'),...squad(8.1,'split',12),
+ specialist(10.2,-3.3,18,'runner'),specialist(10.9,3.3,18,'runner'),...squad(12,'sweep',16),
+ s(41,2.3),...squad(15.2,'line',16),specialist(16,-1.6,42,'shield'),
+ specialist(19,0,170,'captain',{boss:true,bossName:'破城隊長',bossKind:'captain',shotDamage:5,stopZ:-4}),
+ ...squad(22,'split',12),specialist(24,3.2,20,'runner')
+],{kind:'outpost',sand:'#8da37c',road:'#829782',fog:'#b9bea9'});
+STAGES[4]=field('工業地：交差砲撃','狙撃線を外し、二連迫撃砲は側面から狙う。','41–50',[
+ g(10,2.3,-10),...chain(18,2.3,4),r(29,-2.4,18,9),r(53,2.4,22,8),s(43,0),s(69,-2.5),
+ ...squad(4.8,'split',18),specialist(7.5,-2.6,110,'sniper',{shotDamage:5,firstDelay:.35}),
+ specialist(7.0,-2.6,65,'shield'),...squad(9,'line',16),specialist(12,3.3,25,'runner'),specialist(12.7,-3.3,25,'runner'),
+ ...squad(14,'sweep',16),specialist(15.4,2.6,65,'shield'),specialist(16,2.6,110,'sniper',{shotDamage:5}),
+ specialist(28,0,260,'turret',{boss:true,bossName:'二連迫撃砲',bossKind:'mortar',attackPattern:'mortar',shotDamage:7,stopZ:-9}),
+ ...squad(21.5,'split',18),specialist(23,1.4,58,'shield'),...squad(26,'line',16)
+],{kind:'industrial',sand:'#748b92',road:'#657d88',fog:'#adbfbd'});
+STAGES[9]=field('雪山要塞：攻城機','左右の砲撃予告を避け、光る側のコアを狙う。','91–100',[
+ g(10,-2.3,-11),...chain(18,-2.3,5),r(28,2.4,20,10),r(51,-2.4,26,9),r(78,2.4,24,7),s(37,-2.5),s(62,0),
+ ...squad(4.6,'line',24),specialist(6.8,-2.4,70,'shield'),specialist(6.8,2.4,70,'shield'),
+ specialist(9,-3.4,28,'runner'),specialist(9.7,3.4,28,'runner'),specialist(11,2.7,125,'sniper',{shotDamage:6}),
+ ...squad(12,'split',18),...squad(15,'sweep',20),specialist(16,-2.5,140,'turret',{shotDamage:6}),
+ specialist(22,0,360,'tankBoss',{boss:true,bossName:'双核攻城機',bossKind:'siege',attackPattern:'siege',shotDamage:8,stopZ:-8.2}),
+ ...squad(23,'line',16),specialist(25,-3.3,28,'runner'),specialist(25.6,3.3,28,'runner'),...squad(28,'split',18)
+],{kind:'citadel',sand:'#cbd6dc',road:'#8197a2',fog:'#dce8e9'});
+
+
+// Remaining decade bands: recurring enemy rules in different tactical contexts.
+const theme=(kind,sand,road,fog)=>({kind,sand,road,fog});
+const bossAt=(at,kind,name,hp,extra={})=>specialist(at,0,hp,kind==='captain'?'captain':kind==='mortar'||kind==='minelayer'||kind==='rotor'?'turret':'tankBoss',{boss:true,bossKind:kind,bossName:name,shotDamage:6,stopZ:kind==='captain'?-4:-9,...extra});
+const wandering=(at,n=12)=>squad(at,'split',n,6.4).map(o=>({...o,role:'weaver',hp:6}));
+STAGES[1]=field('海岸：波打ち分隊','左右の分隊を止め、装甲車の突進線を外す。','11–20',[
+ g(10,2.2,-8),...chain(18,2.2,4),r(28,-2.3,14,8),r(50,2.3,18,7),
+ ...squad(4.8,'split',18),specialist(8,-3.2,22,'runner'),specialist(8.8,3.2,22,'runner'),...squad(10,'line',16),
+ s(43,-2.4),...squad(14,'sweep',16),specialist(16,1.4,45,'shield'),
+ bossAt(21,'rammer','どすこい装甲車',210,{shotDamage:7}),...squad(23,'split',12),...squad(26,'line',8)
+],theme('coast','#c9c49f','#91a19a','#c8dcda'));
+STAGES[2]=field('砂漠：ジグザグ地雷帯','交互の障害帯を抜け、散布砲の予告円を避ける。','21–30',[
+ g(10,-2.2,-9),...chain(18,-2.2,4),r(29,2.3,15,8),r(53,-2.3,18,8),
+ ...squad(4.8,'line',16),specialist(8,2.5,65,'shooter',{shotDamage:4}),...squad(10,'split',18),s(38,-2.5),
+ ...squad(14,'sweep',12),specialist(16,-2.5,65,'shooter',{shotDamage:4}),s(57,2.5),
+ bossAt(24,'minelayer','ころころ散布砲',220,{attackPattern:'mines'}),...squad(25,'split',12),s(77,0),...squad(29,'line',8)
+],theme('desert','#c2a77f','#a39378','#d6c6a6'));
+STAGES[3]=field('市街：ちょこまか横断隊','横移動する遊撃兵と射手を、盾の横から崩す。','31–40',[
+ g(10,2.3,-9),...chain(18,2.3,4),r(30,-2.4,16,9),r(52,2.4,20,8),
+ ...wandering(4.8,18),specialist(8,-1.5,50,'shield'),specialist(9,2.7,75,'shooter',{shotDamage:4}),...squad(11,'line',16),
+ s(45,0),...wandering(15,12),specialist(17,-2.7,75,'shooter',{shotDamage:4}),
+ bossAt(23,'captain','ちょこまか隊長',210,{mobile:true,shotDamage:5}),...wandering(25,12),...squad(28,'split',12)
+],theme('city','#7b9295','#6f838e','#b4c6ca'));
+STAGES[5]=field('港湾：よろよろ装甲輸送','荷台を守る盾の護衛を崩して、輸送車へ集中射撃。','51–60',[
+ g(10,-2.3,-10),...chain(18,-2.3,5),r(29,2.4,18,10),r(56,-2.4,22,8),
+ ...squad(4.8,'split',18),specialist(8,2.7,85,'shooter',{shotDamage:5}),...squad(10,'line',16),s(43,2.4),
+ specialist(14,-3.3,25,'runner'),specialist(15,3.3,25,'runner'),...squad(17,'sweep',16),
+ specialist(22,-1.6,60,'shield',{escort:true,stopZ:-3}),specialist(22,1.6,60,'shield',{escort:true,stopZ:-3}),
+ bossAt(24,'convoy','よろよろ輸送車',280,{shotDamage:6}),...squad(26,'split',12),...squad(30,'line',8)
+],theme('harbor','#789ca5','#718b95','#bdd8d8'));
+STAGES[6]=field('雪山：遠近サンドイッチ','遠い狙撃と近い斥候を切り替え、旋回砲の空いた側へ。','61–70',[
+ g(10,2.3,-10),...chain(18,2.3,5),r(29,-2.4,19,10),r(55,2.4,23,9),
+ ...squad(4.6,'line',16),specialist(8,-2.6,135,'sniper',{shotDamage:6}),specialist(10,3.3,27,'runner'),
+ ...squad(12,'split',18),specialist(15,-3.3,27,'runner'),s(47,2.5),specialist(18,2.6,135,'sniper',{shotDamage:6}),
+ ...squad(21,'sweep',12),bossAt(27,'rotor','ぐるぐる旋回砲',280,{attackPattern:'rotor',shotDamage:7}),...squad(29,'split',12)
+],theme('snow','#c9dce0','#87a2ad','#dcebee'));
+STAGES[7]=field('補給市街：ほしいもの三択','救援・防御・敵処理。全部を追わず安全なルートを選ぶ。','71–80',[
+ g(10,-2.3,-11),...chain(18,-2.3,4),r(29,2.4,20,9),a(40,0,18,2),r(56,-2.4,25,8),r(82,2.4,24,7),
+ ...wandering(4.6,18),specialist(8,2.6,90,'shooter',{shotDamage:5}),...squad(11,'line',16),s(43,0),
+ ...wandering(15,18),specialist(18,-2.6,100,'shooter',{shotDamage:5}),
+ specialist(22,-1.7,65,'shield',{escort:true,stopZ:-3}),specialist(22,1.7,65,'shield',{escort:true,stopZ:-3}),
+ bossAt(24,'supply','もりもり補給車',300,{shotDamage:6}),...squad(26,'split',18),...wandering(30,12)
+],theme('depot','#919d91','#748786','#c0d0bc'));
+STAGES[8]=field('雪原要塞：重装のすきま','重装護衛の横へ。突進車と障害帯の通れる側を見つける。','81–90',[
+ g(10,2.3,-11),...chain(18,2.3,5),r(29,-2.4,21,10),r(54,2.4,24,9),
+ ...squad(4.6,'line',24),specialist(7,-1.4,70,'shield'),specialist(7,1.4,70,'shield'),...squad(10,'split',18),
+ s(43,-2.4),specialist(14,2.7,140,'turret',{shotDamage:6}),...squad(17,'sweep',16),s(60,2.4),
+ bossAt(25,'rammer','ごつごつ突破車',310,{shotDamage:8}),specialist(27,-3.3,28,'runner'),specialist(28,3.3,28,'runner'),...squad(30,'split',12)
+],theme('fortress','#bacbd0','#78919b','#d0e1e5'));
+

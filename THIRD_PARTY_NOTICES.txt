@@ -1,4 +1,4 @@
-Breach Run / ブリーチラン — Third-party notices
+ぶっぱなせ！ちび軍団 / ブリーチラン — Third-party notices
 
 Character model: Quaternius, Toon Shooter Game Kit (December 2022), Character_Soldier.
 License: CC0 1.0 Universal.
