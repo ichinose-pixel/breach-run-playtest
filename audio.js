@@ -41,4 +41,23 @@ class BattleAudio {
   }
  }
 }
+// CC0 recordings: see assets/audio/manifest.json and licenses/audio/.
+// Representative fire bus: at most two short gun voices, independent of army size.
+const RECORDED_AUDIO={gun:'0437.mp3',heavy:'0438.mp3',cock:'1987.mp3',load:'1988.mp3',hit0:'impactPunch_medium_000.wav',hit1:'impactPunch_medium_001.wav',metal:'impactMetal_light_000.wav',plate:'impactPlate_heavy_000.wav',wood:'impactWood_heavy_000.wav',glass:'impactGlass_heavy_000.wav',blast:'explosionCrunch_001.wav'};
+const synthInit=BattleAudio.prototype.init,synthEffect=BattleAudio.prototype.effect;
+BattleAudio.prototype.init=function(){synthInit.call(this);if(!this.ctx||this.sampleReadyPromise)return;this.recordings={};this.shotSources=new Set();this.sampleLimits={};this.sampleStats={played:0,shotPeak:0,peak:0,active:0,errors:[],loaded:0};this.sampleReadyPromise=Promise.all(Object.entries(RECORDED_AUDIO).map(async([key,file])=>{try{const response=await fetch(new URL('assets/audio/'+file,document.baseURI));if(!response.ok)throw Error(file+' HTTP '+response.status);const buffer=await this.ctx.decodeAudioData(await response.arrayBuffer()),data=buffer.getChannelData(0);let peak=0;for(const v of data)peak=Math.max(peak,Math.abs(v));const width=Math.round(buffer.sampleRate*.005),energies=[];for(let i=0;i<data.length;i+=width){let e=0;for(let j=i;j<Math.min(i+width,data.length);j++)e+=data[j]*data[j];energies.push(e);}const threshold=Math.max(...energies)*.15,onset=Math.max(0,energies.findIndex(e=>e>=threshold)*.005-.004);this.recordings[key]={buffer,peak,onset};this.sampleStats.loaded++;}catch(error){this.sampleStats.errors.push(String(error));}}));};
+BattleAudio.prototype.recorded=function(key,peakLevel=.18,duration=.22,delay=0,shot=false){const sample=this.recordings?.[key];if(!sample||!this.enabled)return false;if(shot&&this.shotSources.size>=2)return true;if(!this.reserve(this.fx))return true;const c=this.ctx,t=c.currentTime+delay,source=c.createBufferSource(),gain=c.createGain(),filter=c.createBiquadFilter(),length=Math.min(duration,sample.buffer.duration-sample.onset);source.buffer=sample.buffer;source.playbackRate.value=shot?(this.sampleStats.played%2?1.015:.985):1;filter.type='highpass';filter.frequency.value=shot?115:75;filter.Q.value=-3;const volume=peakLevel/Math.max(.05,sample.peak);gain.gain.setValueAtTime(0,t);gain.gain.linearRampToValueAtTime(volume,t+.002);gain.gain.setValueAtTime(volume,t+Math.max(.005,length-.045));gain.gain.linearRampToValueAtTime(0,t+length);source.connect(filter);filter.connect(gain);gain.connect(this.fx);if(shot)this.shotSources.add(source);this.sampleStats.played++;this.sampleStats.active++;this.sampleStats.peak=Math.max(this.sampleStats.peak,this.sampleStats.active);this.sampleStats.shotPeak=Math.max(this.sampleStats.shotPeak,this.shotSources.size);source.start(t,sample.onset);source.stop(t+length+.01);source.onended=()=>{this.voices--;this.sampleStats.active--;this.shotSources.delete(source);source.disconnect();gain.disconnect();filter.disconnect()};return true;};
+BattleAudio.prototype.effect=function(kind,intensity=0){if(!this.ctx||!this.enabled)return;const t=this.ctx.currentTime;if(kind==='shot'&&t<(this.shotQuietUntil||0))return;const primary={shot:'gun','enemy-shot':'heavy',hit:'hit0','gate-tick':'wood','panel-break':'wood',join:'cock','gate-cash':'load','armor-break':'plate',rupture:'blast',boom:'blast'}[kind];if(!primary||!this.recordings?.[primary])return synthEffect.call(this,kind==='enemy-shot'?'shot':kind,intensity);if(t<(this.sampleLimits[kind]||0))return;this.sampleLimits[kind]=t+({shot:intensity>=4?.095:.14,'enemy-shot':.25,hit:.10,'gate-tick':.12,'panel-break':.13,join:.22,'gate-cash':.35,'armor-break':.30,rupture:.6,boom:.3}[kind]||.1);
+ if(kind==='shot')this.recorded('gun',.26,.18,0,true);
+ else if(kind==='enemy-shot')this.recorded('heavy',.29,.26);
+ else if(kind==='hit')this.recorded(this.sampleStats.played%2?'hit0':'hit1',.095,.16);
+ else if(kind==='gate-tick')this.recorded('wood',.060,.13);
+ else if(kind==='panel-break'){this.recorded('wood',.20,.23);this.recorded('glass',.065,.14,.025);}
+ else if(kind==='join'){this.recorded('cock',intensity>=8?.18:.12,.3);}
+ else if(kind==='gate-cash'){this.duck(.45);this.recorded('load',.21,.36);this.recorded('cock',.10,.25,.1);}
+ else if(kind==='armor-break'){this.duck(.5);this.recorded('plate',.32,.45);this.recorded('glass',.10,.2,.035);}
+ else if(kind==='rupture'){this.shotQuietUntil=t+1.25;for(const shot of this.shotSources)try{shot.stop(t+.015)}catch{}this.duck(1.4);this.recorded('blast',.42,1.3,.12);}
+ else if(kind==='boom')this.recorded('blast',.22,.5);
+};
+
 const battleAudio=new BattleAudio();

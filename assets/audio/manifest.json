@@ -1,0 +1,308 @@
+[
+  {
+    "file": "0437.mp3",
+    "source_page": "https://bigsoundbank.com/shot-beretta-m12-9-mm-s0437.html",
+    "source_download": "https://bigsoundbank.com/UPLOAD/mp3/0437.mp3",
+    "license": "CC0 1.0",
+    "license_page": "https://bigsoundbank.com/licenses.html",
+    "attribution_required": false,
+    "commercial_use": true,
+    "redistribution_and_app_bundling": true,
+    "editing_and_conversion": true,
+    "edits": "None; original audio bytes",
+    "verified_date_utc": "2026-10-07",
+    "listened": false,
+    "duration_seconds": 2.977959,
+    "streams": [
+      {
+        "codec_name": "mp3",
+        "sample_rate": "44100",
+        "channels": 2
+      }
+    ],
+    "bytes": 72097,
+    "sha256": "1ba752526b8334bdbd4c655a73cfe4c4170a7457c2124a32ab29d14a0cce98f2",
+    "original_file": "bigsoundbank/0437.mp3",
+    "runtime_processing": "Onset trim, gain normalization and short envelope at playback; original file bytes unchanged"
+  },
+  {
+    "file": "0438.mp3",
+    "source_page": "https://bigsoundbank.com/shot-in-357-magnum-9-mm-s0438.html",
+    "source_download": "https://bigsoundbank.com/UPLOAD/mp3/0438.mp3",
+    "license": "CC0 1.0",
+    "license_page": "https://bigsoundbank.com/licenses.html",
+    "attribution_required": false,
+    "commercial_use": true,
+    "redistribution_and_app_bundling": true,
+    "editing_and_conversion": true,
+    "edits": "None; original audio bytes",
+    "verified_date_utc": "2026-10-07",
+    "listened": false,
+    "duration_seconds": 3.030204,
+    "streams": [
+      {
+        "codec_name": "mp3",
+        "sample_rate": "44100",
+        "channels": 2
+      }
+    ],
+    "bytes": 73350,
+    "sha256": "9189342d8e59a51e2503250a46104514d982e86d69be95f993895d0e1b51241a",
+    "original_file": "bigsoundbank/0438.mp3",
+    "runtime_processing": "Onset trim, gain normalization and short envelope at playback; original file bytes unchanged"
+  },
+  {
+    "file": "1987.mp3",
+    "source_page": "https://bigsoundbank.com/pistol-cocking-4-s1987.html",
+    "source_download": "https://bigsoundbank.com/UPLOAD/mp3/1987.mp3",
+    "license": "CC0 1.0",
+    "license_page": "https://bigsoundbank.com/licenses.html",
+    "attribution_required": false,
+    "commercial_use": true,
+    "redistribution_and_app_bundling": true,
+    "editing_and_conversion": true,
+    "edits": "None; original audio bytes",
+    "verified_date_utc": "2026-10-07",
+    "listened": false,
+    "duration_seconds": 0.504,
+    "streams": [
+      {
+        "codec_name": "mp3",
+        "sample_rate": "48000",
+        "channels": 1,
+        "side_data_list": [
+          {}
+        ]
+      }
+    ],
+    "bytes": 21348,
+    "sha256": "2e9b43c8094dcbcdf3f277f73595267c7d5be289673d520778ae707d762e9e53",
+    "original_file": "bigsoundbank/1987.mp3",
+    "runtime_processing": "Onset trim, gain normalization and short envelope at playback; original file bytes unchanged"
+  },
+  {
+    "file": "1988.mp3",
+    "source_page": "https://bigsoundbank.com/gun-loading-1-s1988.html",
+    "source_download": "https://bigsoundbank.com/UPLOAD/mp3/1988.mp3",
+    "license": "CC0 1.0",
+    "license_page": "https://bigsoundbank.com/licenses.html",
+    "attribution_required": false,
+    "commercial_use": true,
+    "redistribution_and_app_bundling": true,
+    "editing_and_conversion": true,
+    "edits": "None; original audio bytes",
+    "verified_date_utc": "2026-10-07",
+    "listened": false,
+    "duration_seconds": 0.816,
+    "streams": [
+      {
+        "codec_name": "mp3",
+        "sample_rate": "48000",
+        "channels": 1,
+        "side_data_list": [
+          {}
+        ]
+      }
+    ],
+    "bytes": 33828,
+    "sha256": "7ad802afc882f266331dca7b19675a617e6e339f8bffe561305d46449d7bbf14",
+    "original_file": "bigsoundbank/1988.mp3",
+    "runtime_processing": "Onset trim, gain normalization and short envelope at playback; original file bytes unchanged"
+  },
+  {
+    "file": "impactGlass_heavy_000.ogg",
+    "source_page": "https://kenney.nl/assets/impact-sounds",
+    "source_download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0 1.0",
+    "license_page": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attribution_required": false,
+    "commercial_use": true,
+    "redistribution_and_app_bundling": true,
+    "editing_and_conversion": true,
+    "edits": "None; original audio bytes",
+    "verified_date_utc": "2026-10-07",
+    "listened": false,
+    "duration_seconds": 0.241224,
+    "streams": [
+      {
+        "codec_name": "vorbis",
+        "sample_rate": "44100",
+        "channels": 2
+      }
+    ],
+    "bytes": 7403,
+    "sha256": "b44b39a940e8948e74b9bd3776bff980df43cf220abdaf0d467dc4c43c0244a5",
+    "original_file": "kenney-impact-sounds/impactGlass_heavy_000.ogg",
+    "runtime_processing": "Decoded original OGG to PCM16 WAV preserving channels; onset trim, gain normalization and envelope at playback. Original OGG retained.",
+    "runtime_file": "impactGlass_heavy_000.wav",
+    "runtime_sha256": "42dbdb960faa10f21cb7a08e72ddaac7cf85dff6b1bcd8a0fead2c1483b3327c"
+  },
+  {
+    "file": "impactMetal_light_000.ogg",
+    "source_page": "https://kenney.nl/assets/impact-sounds",
+    "source_download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0 1.0",
+    "license_page": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attribution_required": false,
+    "commercial_use": true,
+    "redistribution_and_app_bundling": true,
+    "editing_and_conversion": true,
+    "edits": "None; original audio bytes",
+    "verified_date_utc": "2026-10-07",
+    "listened": false,
+    "duration_seconds": 0.351474,
+    "streams": [
+      {
+        "codec_name": "vorbis",
+        "sample_rate": "44100",
+        "channels": 2
+      }
+    ],
+    "bytes": 7651,
+    "sha256": "33b5e6e37c6e9d54e07bf5a89b12c76e879f40c1ea83cdd82714df1d6f9fec6d",
+    "original_file": "kenney-impact-sounds/impactMetal_light_000.ogg",
+    "runtime_processing": "Decoded original OGG to PCM16 WAV preserving channels; onset trim, gain normalization and envelope at playback. Original OGG retained.",
+    "runtime_file": "impactMetal_light_000.wav",
+    "runtime_sha256": "efe41e866e3fdfaab7bf4ed83231032305af9fa27fe67a245f2d8f33effcdc60"
+  },
+  {
+    "file": "impactPlate_heavy_000.ogg",
+    "source_page": "https://kenney.nl/assets/impact-sounds",
+    "source_download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0 1.0",
+    "license_page": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attribution_required": false,
+    "commercial_use": true,
+    "redistribution_and_app_bundling": true,
+    "editing_and_conversion": true,
+    "edits": "None; original audio bytes",
+    "verified_date_utc": "2026-10-07",
+    "listened": false,
+    "duration_seconds": 0.488662,
+    "streams": [
+      {
+        "codec_name": "vorbis",
+        "sample_rate": "44100",
+        "channels": 2
+      }
+    ],
+    "bytes": 10032,
+    "sha256": "112d4f93ddcc370b410630f971c0f5d991856102da9c76bc5c5540d388e75aaa",
+    "original_file": "kenney-impact-sounds/impactPlate_heavy_000.ogg",
+    "runtime_processing": "Decoded original OGG to PCM16 WAV preserving channels; onset trim, gain normalization and envelope at playback. Original OGG retained.",
+    "runtime_file": "impactPlate_heavy_000.wav",
+    "runtime_sha256": "185b5fcc16c63b91a39d758d879e49e210d86a5c4b895b47ddf16dbe5193d7bc"
+  },
+  {
+    "file": "impactPunch_medium_000.ogg",
+    "source_page": "https://kenney.nl/assets/impact-sounds",
+    "source_download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0 1.0",
+    "license_page": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attribution_required": false,
+    "commercial_use": true,
+    "redistribution_and_app_bundling": true,
+    "editing_and_conversion": true,
+    "edits": "None; original audio bytes",
+    "verified_date_utc": "2026-10-07",
+    "listened": false,
+    "duration_seconds": 0.430544,
+    "streams": [
+      {
+        "codec_name": "vorbis",
+        "sample_rate": "44100",
+        "channels": 2
+      }
+    ],
+    "bytes": 8800,
+    "sha256": "486988aa2d6440ffc4c62a0e8ccf3c23673ba84424bd4723378d451b7255eb5c",
+    "original_file": "kenney-impact-sounds/impactPunch_medium_000.ogg",
+    "runtime_processing": "Decoded original OGG to PCM16 WAV preserving channels; onset trim, gain normalization and envelope at playback. Original OGG retained.",
+    "runtime_file": "impactPunch_medium_000.wav",
+    "runtime_sha256": "f64358137a71d78d1770c26b1bc8176ef715df96f9ea5c1b0a25fae47a536380"
+  },
+  {
+    "file": "impactPunch_medium_001.ogg",
+    "source_page": "https://kenney.nl/assets/impact-sounds",
+    "source_download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0 1.0",
+    "license_page": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attribution_required": false,
+    "commercial_use": true,
+    "redistribution_and_app_bundling": true,
+    "editing_and_conversion": true,
+    "edits": "None; original audio bytes",
+    "verified_date_utc": "2026-10-07",
+    "listened": false,
+    "duration_seconds": 0.404603,
+    "streams": [
+      {
+        "codec_name": "vorbis",
+        "sample_rate": "44100",
+        "channels": 2
+      }
+    ],
+    "bytes": 8701,
+    "sha256": "e71d23abcc3f10d9d6bc9615b2a431fff70b12333a5fcdd9964457564ace4349",
+    "original_file": "kenney-impact-sounds/impactPunch_medium_001.ogg",
+    "runtime_processing": "Decoded original OGG to PCM16 WAV preserving channels; onset trim, gain normalization and envelope at playback. Original OGG retained.",
+    "runtime_file": "impactPunch_medium_001.wav",
+    "runtime_sha256": "3a229810f85e7e346f1f1be8540213052bdb0f885aba42e0adb08183806ba5b3"
+  },
+  {
+    "file": "impactWood_heavy_000.ogg",
+    "source_page": "https://kenney.nl/assets/impact-sounds",
+    "source_download": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+    "license": "CC0 1.0",
+    "license_page": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attribution_required": false,
+    "commercial_use": true,
+    "redistribution_and_app_bundling": true,
+    "editing_and_conversion": true,
+    "edits": "None; original audio bytes",
+    "verified_date_utc": "2026-10-07",
+    "listened": false,
+    "duration_seconds": 0.313039,
+    "streams": [
+      {
+        "codec_name": "vorbis",
+        "sample_rate": "44100",
+        "channels": 2
+      }
+    ],
+    "bytes": 6233,
+    "sha256": "15ff82332f342c30e469215539e1cc57e11b221aa2cf7e11e811d313a9927f3d",
+    "original_file": "kenney-impact-sounds/impactWood_heavy_000.ogg",
+    "runtime_processing": "Decoded original OGG to PCM16 WAV preserving channels; onset trim, gain normalization and envelope at playback. Original OGG retained.",
+    "runtime_file": "impactWood_heavy_000.wav",
+    "runtime_sha256": "aaba847199e3925ef51b31bb6606d3b9bfac9274b62c49a09615e37886b0f9b4"
+  },
+  {
+    "file": "explosionCrunch_001.ogg",
+    "source_page": "https://kenney.nl/assets/sci-fi-sounds",
+    "source_download": "https://kenney.nl/media/pages/assets/sci-fi-sounds/6b296f9ecf-1677589334/kenney_sci-fi-sounds.zip",
+    "license": "CC0 1.0",
+    "license_page": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attribution_required": false,
+    "commercial_use": true,
+    "redistribution_and_app_bundling": true,
+    "editing_and_conversion": true,
+    "edits": "None; original audio bytes",
+    "verified_date_utc": "2026-10-07",
+    "listened": false,
+    "duration_seconds": 1.35678,
+    "streams": [
+      {
+        "codec_name": "vorbis",
+        "sample_rate": "44100",
+        "channels": 1
+      }
+    ],
+    "bytes": 47916,
+    "sha256": "fdd04d6f0032d4d57c134ad37f3587d2d00e58c9572715275bd8cf4f43593576",
+    "original_file": "kenney-sci-fi-sounds/explosionCrunch_001.ogg",
+    "runtime_processing": "Decoded original OGG to PCM16 WAV preserving channels; onset trim, gain normalization and envelope at playback. Original OGG retained.",
+    "runtime_file": "explosionCrunch_001.wav",
+    "runtime_sha256": "c6b9d1bef313017624539cc8ea95b9057562a931d9141858ae8a58f4ef48e20f"
+  }
+]

@@ -154,3 +154,27 @@ for(const o of STAGES[7].objects)if(o.boss){o.hp=650;o.attackPattern='rotor';o.p
 
 // Cargo guards stay in front of the vehicle, so their protection can always be removed.
 for(const o of STAGES[7].objects)if(o.escort)o.stopZ=-1.2;
+
+// v18 trial: three representative bands only. Earn the last army before the boss.
+// Fixed authored health; never scales in response to the player's force.
+for(const [i,d,value,hp] of [[0,70,12,1800],[4,72,40,2000],[9,74,60,2800]]){
+ const stage=STAGES[i],gate=stage.objects.filter(o=>o.type==='gate').sort((a,b)=>b.d-a.d)[0],boss=stage.objects.find(o=>o.boss);
+ gate.d=d;gate.value=value;gate.prebossSupply=true;
+ boss.spawnAt=d/2.7+5;boss.hp=hp;boss.prebossTrial=true;
+ stage.durationHint=boss.spawnAt+12;stage.tip='最後の増援板を育てて回収。大軍で装甲を割り、予告の外から反撃。';
+}
+
+// v19: individual authored health and preparation spacing for the remaining bands.
+for(const [i,d,value,hp] of [[1,71,20,3200],[2,73,24,4500],[3,72,30,2000],[5,73,38,6000],[6,75,42,2400],[7,76,48,2800],[8,74,54,2600]]){
+ const stage=STAGES[i],gate=stage.objects.filter(o=>o.type==='gate').sort((a,b)=>b.d-a.d)[0],boss=stage.objects.find(o=>o.boss);
+ gate.d=d;gate.value=value;gate.prebossSupply=true;
+ boss.spawnAt=d/2.7+5;boss.hp=hp;boss.prebossTrial=true;stage.durationHint=boss.spawnAt+12;
+ stage.tip='最後の増援板を育てて回収。大軍で装甲を割り、予告の外から反撃。';
+ if([5,7].includes(i))for(const o of stage.objects)if(o.escort){o.spawnAt=boss.spawnAt-2;o.stopZ=-1.2;}
+}
+
+// Visible, fixed late rescue opportunities for everyone; no force-dependent assistance.
+for(let i=0;i<STAGES.length;i++){
+ const stage=STAGES[i],boss=stage.objects.find(o=>o.boss),gain1=[20,20,22,24,24,26,26,28,28,30][i],gain2=[25,25,28,30,30,32,32,35,35,38][i];
+ stage.objects.push({...r((boss.spawnAt+14)*2.7,-2.4,18+i,gain1),lateRescue:true}, {...r((boss.spawnAt+21)*2.7,2.4,22+i,gain2),lateRescue:true});
+}
