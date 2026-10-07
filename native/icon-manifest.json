@@ -1,0 +1,11 @@
+{
+  "approvedIcon": "A",
+  "width": 1024,
+  "height": 1024,
+  "mode": "RGB",
+  "pngColorType": 2,
+  "alphaChannelPresent": false,
+  "sha256": "627fe3eb5a769fe1c39abaad70f0a598a4053c7131ad6addd621612638494ab8",
+  "assetCatalog": "native/Assets.xcassets/AppIcon.appiconset",
+  "appleRegistrationPerformed": false
+}

@@ -1,0 +1,11 @@
+node_modules/
+www/
+.stage/
+ios/App/App/public/
+ios/App/Pods/
+*.p12
+*.p8
+*.mobileprovision
+*.xcarchive
+*.ipa
+.DS_Store

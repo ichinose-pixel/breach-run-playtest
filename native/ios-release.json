@@ -1,0 +1,17 @@
+{
+  "bundleId": "io.github.ichinosepixel.bucchibi",
+  "displayName": "ぶっちび",
+  "formalName": "ぶっぱなせ！ちび軍団",
+  "marketingVersion": "1.0",
+  "buildNumber": "1",
+  "registrationConfirmed": true,
+  "teamId": "Q632QFMNAP",
+  "appStoreConnectId": "6820066209",
+  "iconApproved": true,
+  "signingAllowed": true,
+  "registrationStatus": "Confirmed by cloud owner",
+  "sku": "bucchibi-ios",
+  "profileReference": "bucchibi-app-store",
+  "certificateReference": "hamudoku-distribution",
+  "integrationReference": "Codemagic hamudoku"
+}

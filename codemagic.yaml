@@ -1,0 +1,86 @@
+# Manual only. No push triggers. Cloud owner confirms free quota and starts exact commit.
+workflows:
+  ios-owner-testflight:
+    name: Bucchibi 1.0 owner TestFlight
+    instance_type: mac_mini_m2
+    max_build_duration: 25
+    integrations:
+      app_store_connect: Codemagic hamudoku
+    environment:
+      node: 24.19.0
+      xcode: "26.0"
+      ios_signing:
+        certificates:
+          - hamudoku-distribution
+        provisioning_profiles:
+          - bucchibi-app-store
+      vars:
+        BUCCHIBI_BUILD_NUMBER: "1"
+        BUCCHIBI_REGISTRATION_CONFIRMED: "1"
+        APP_STORE_APPLE_ID: "6820066209"
+    scripts:
+      - name: Confirm cloud registration settings
+        script: |
+          set -euo pipefail
+          test "${BUCCHIBI_REGISTRATION_CONFIRMED:-}" = "1"
+          test -n "${APP_STORE_APPLE_ID:-}"
+      - name: Install and bundle locked offline game
+        script: |
+          set -euo pipefail
+          npm ci --ignore-scripts --registry=https://registry.npmjs.org
+          npm run build
+          npm test
+      - name: Generate and validate iOS project
+        script: |
+          set -euo pipefail
+          npm run ios:prepare
+          plutil -lint ios/App/App/Info.plist ios/App/App/PrivacyInfo.xcprivacy
+          node scripts/check-prepared-ios.mjs
+      - name: Apply Codemagic managed signing
+        script: |
+          set -euo pipefail
+          keychain initialize
+          keychain add-certificates
+          xcode-project use-profiles --custom-export-options='{"testFlightInternalTestingOnly":true}'
+      - name: Archive and export once
+        script: |
+          set -euo pipefail
+          xcode-project build-ipa --project ios/App/App.xcodeproj --scheme App
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - evidence/offline-manifest.json
+      - evidence/prepared-ios.json
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: false
+        submit_to_app_store: false
+  ios-simulator-smoke:
+    name: Bucchibi one-shot simulator launch (optional)
+    instance_type: mac_mini_m2
+    max_build_duration: 20
+    environment:
+      node: 24.19.0
+      xcode: "26.0"
+    scripts:
+      - name: Prepare offline game and official project
+        script: |
+          set -euo pipefail
+          npm ci --ignore-scripts --registry=https://registry.npmjs.org
+          npm run build
+          npm test
+          npm run ios:prepare
+          node scripts/check-prepared-ios.mjs
+      - name: Build simulator once
+        script: |
+          set -euo pipefail
+          mkdir -p artifacts
+          xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Debug -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -derivedDataPath artifacts/DerivedData CODE_SIGNING_ALLOWED=NO build > artifacts/simulator-build.log 2>&1
+      - name: One installed simulator and one screenshot
+        script: python3 scripts/simulator-smoke.py
+    artifacts:
+      - artifacts/simulator-build.log
+      - artifacts/launch.png
+      - artifacts/launch.json
+      - evidence/prepared-ios.json

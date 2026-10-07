@@ -1,0 +1,9 @@
+{
+  "validYAML": true,
+  "manualOnly": true,
+  "workflows": [
+    "ios-owner-testflight",
+    "ios-simulator-smoke"
+  ],
+  "signedRunNotStarted": true
+}

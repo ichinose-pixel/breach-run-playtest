@@ -1,0 +1,282 @@
+{
+  "previousCommit": "161910fdee2e0c20cd74c18ce0075b80966b6b65",
+  "baseTree": "2d835e971b5a904e09d43f3c003fa6ca6638a8b0",
+  "rollback": "rollback/161910f-v19-before-v20-20261007",
+  "candidate": "3c0890a302dd4237910d717fa251c55085394ec2",
+  "productionOnlyChanges": [
+    "index/README release wording",
+    "credits 100 missions"
+  ],
+  "files": [
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "actors.js",
+      "bytes": 11103,
+      "sha": "b1e232cd41bddad0fd73f5c467b15a88bcddb820",
+      "sha256": "4b179f4700b4876e50fd243816c024d23824576ac64aa7485a898719d4fcb35e"
+    },
+    {
+      "path": "audio.js",
+      "bytes": 13667,
+      "sha": "1762f0c96778cb854ac76d271525f7ec2964e075",
+      "sha256": "7fc2704529351514d90b8554363e76591ffe2e6686c2130523a9e0fe64217296"
+    },
+    {
+      "path": "campaign.css",
+      "bytes": 21371,
+      "sha": "3c3dc5a4add000dd4c2e985e91d90516121fd543",
+      "sha256": "1f4b6f5e6c87454de63730ab95216a22e871c57a5363a95ae1cba65ea61c9f83"
+    },
+    {
+      "path": "campaign.js",
+      "bytes": 61802,
+      "sha": "cb1e7966d13743aa38fd0d0a79dc101a78e8a4dd",
+      "sha256": "f737319ff4d795322d0ed327fa6c1193a399dbf4a417c643c9c1ef82265e9bd5"
+    },
+    {
+      "path": "credits.html",
+      "bytes": 712,
+      "sha": "182687055fef7e654a95317a4641528b965402e3",
+      "sha256": "a2bb481c3681de6929a9de8d6eaaa34e27669e6a3d2e688d8aec946699feeca7"
+    },
+    {
+      "path": "index.html",
+      "bytes": 1130,
+      "sha": "dc841e7edad698aa7ee3c2bd6cf20e679abe3570",
+      "sha256": "00e3e15d3209f6f07dca894c0d0c4b56b3060a91da86f8478cf18d8a6da839d6"
+    },
+    {
+      "path": "mission-data.js",
+      "bytes": 2758,
+      "sha": "3abea61bd44e8c3a6167a9743e8fab88fe1a9abf",
+      "sha256": "3577cb2d102a58fc59c5d8270e97720a7b3a2d4b24c77ad2e52447b8e9b161bc"
+    },
+    {
+      "path": "progression.js",
+      "bytes": 6203,
+      "sha": "bfbdc1e25ece41e7b784a1313444126514302408",
+      "sha256": "80224c0da56801b7555c8a6cdaff45fe16306ecde34527bb4159275ea3437af8"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2672,
+      "sha": "6556dfc2de4d731a940176f7a4d433b2881b469f",
+      "sha256": "caaabef883e3dad3ab809c48391828681cff6777d31f95f65fcd06506a8b4c50"
+    },
+    {
+      "path": "spectacle.js",
+      "bytes": 5088,
+      "sha": "2b712312af37877bce205ee22e2532c3e13f7927",
+      "sha256": "7ab109e88a9a4acecf43059118b54f2e1023826a04727a93cbe53e7a126e13d0"
+    },
+    {
+      "path": "stages-v19.js",
+      "bytes": 18991,
+      "sha": "f0c5a240856f64b418d8688439eb05a3cea813d5",
+      "sha256": "5b486e3a0d4ce5ed44668be4831a18c15c4c1c465034d4d7ed778ba2da5ad621"
+    },
+    {
+      "path": "stages.js",
+      "bytes": 18991,
+      "sha": "f0c5a240856f64b418d8688439eb05a3cea813d5",
+      "sha256": "5b486e3a0d4ce5ed44668be4831a18c15c4c1c465034d4d7ed778ba2da5ad621"
+    },
+    {
+      "path": "terrain.js",
+      "bytes": 6894,
+      "sha": "45ee9860c298d20fa72499676fe70353a319a340",
+      "sha256": "7bfb9245028fae21af4294090b05031322d053181a748f884ceb8a895cab280f"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.txt",
+      "bytes": 2100,
+      "sha": "328e80ebc44e407eedb7bd5f8e3bd2b89c843864",
+      "sha256": "cec8521ec8a6fe3520d292fe171f8544db4d041561170b2acf81420bddcdc568"
+    },
+    {
+      "path": "vehicles.js",
+      "bytes": 7905,
+      "sha": "c1d053a4ad1a3d429f344fe741349c9593eccae3",
+      "sha256": "b30201e5995fad806c809f89561450aa3679937437df650b8410ee1481802bcd"
+    },
+    {
+      "path": "assets/soldier.gltf",
+      "bytes": 474206,
+      "sha": "2eb0fba835c9dcc7ab6332a610fcc43e396a5003",
+      "sha256": "cab0013dbb0f73c175a11d408cee41d59ea861b03f41feafdd113d5669f4f22e"
+    },
+    {
+      "path": "vendor/BufferGeometryUtils.js",
+      "bytes": 31768,
+      "sha": "cc3e4ef8ea6f15c52e7cf132b7292632f6dcad10",
+      "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6"
+    },
+    {
+      "path": "vendor/GLTFLoader.js",
+      "bytes": 109826,
+      "sha": "d0de3886a21ce33b2fffc62bb68712f0607147cc",
+      "sha256": "84dfc4625abbec3c712581a4417e70ca2a88a97640c90e2a1e7fd2881ffd081f"
+    },
+    {
+      "path": "vendor/LICENSE",
+      "bytes": 1081,
+      "sha": "d33709fbf00f10b928bae20baf72a5c6da92d03a",
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    },
+    {
+      "path": "vendor/SkeletonUtils.js",
+      "bytes": 8421,
+      "sha": "1f25e4cbbc9a00f8b012cc5bac9a136d49353619",
+      "sha256": "e0dcb498b3383a032e6e934fcc5bfe07b5e99d4d4d1c77a7956fe935304abf5c"
+    },
+    {
+      "path": "vendor/three.module.js",
+      "bytes": 1284652,
+      "sha": "fcf5e09d8ada1f25b9c3218ce9ce65e67fb54eb5",
+      "sha256": "5916c8dfb5f4e3eede312de305345868d4a0a8105383b080c6985565d6e79b46"
+    },
+    {
+      "path": "assets/audio/0437.mp3",
+      "bytes": 72097,
+      "sha": "9d9b03019ec7ee7b969d11bfc3d3181f7e711d37",
+      "sha256": "1ba752526b8334bdbd4c655a73cfe4c4170a7457c2124a32ab29d14a0cce98f2"
+    },
+    {
+      "path": "assets/audio/0438.mp3",
+      "bytes": 73350,
+      "sha": "25bb167d9600dde2d6e9a672d79405cdcfe7b0c2",
+      "sha256": "9189342d8e59a51e2503250a46104514d982e86d69be95f993895d0e1b51241a"
+    },
+    {
+      "path": "assets/audio/1987.mp3",
+      "bytes": 21348,
+      "sha": "c11380b1e67b9f44d2b930f6c501125aae22d4bd",
+      "sha256": "2e9b43c8094dcbcdf3f277f73595267c7d5be289673d520778ae707d762e9e53"
+    },
+    {
+      "path": "assets/audio/1988.mp3",
+      "bytes": 33828,
+      "sha": "a0ae956a0be37e2f0627b57067e3af9a89cadc93",
+      "sha256": "7ad802afc882f266331dca7b19675a617e6e339f8bffe561305d46449d7bbf14"
+    },
+    {
+      "path": "assets/audio/explosionCrunch_001.ogg",
+      "bytes": 47916,
+      "sha": "64a2fcc1795bedd44edec334e4c58318aa9b090e",
+      "sha256": "fdd04d6f0032d4d57c134ad37f3587d2d00e58c9572715275bd8cf4f43593576"
+    },
+    {
+      "path": "assets/audio/explosionCrunch_001.wav",
+      "bytes": 130294,
+      "sha": "bc0b0b3ce2e3c626cb2dbd2e10bab73db1b3fb88",
+      "sha256": "c6b9d1bef313017624539cc8ea95b9057562a931d9141858ae8a58f4ef48e20f"
+    },
+    {
+      "path": "assets/audio/impactGlass_heavy_000.ogg",
+      "bytes": 7403,
+      "sha": "b9cbaad034d2da26dffcfbc0bead1abcf595f560",
+      "sha256": "b44b39a940e8948e74b9bd3776bff980df43cf220abdaf0d467dc4c43c0244a5"
+    },
+    {
+      "path": "assets/audio/impactGlass_heavy_000.wav",
+      "bytes": 45800,
+      "sha": "463716c9738ee274b6180ff27a941f18c4af86ff",
+      "sha256": "42dbdb960faa10f21cb7a08e72ddaac7cf85dff6b1bcd8a0fead2c1483b3327c"
+    },
+    {
+      "path": "assets/audio/impactMetal_light_000.ogg",
+      "bytes": 7651,
+      "sha": "7d49262cc9f69eb517cf644f61940ace16714f22",
+      "sha256": "33b5e6e37c6e9d54e07bf5a89b12c76e879f40c1ea83cdd82714df1d6f9fec6d"
+    },
+    {
+      "path": "assets/audio/impactMetal_light_000.wav",
+      "bytes": 67196,
+      "sha": "ffb20403d5e55f2a889acf01732d44c1f54545da",
+      "sha256": "efe41e866e3fdfaab7bf4ed83231032305af9fa27fe67a245f2d8f33effcdc60"
+    },
+    {
+      "path": "assets/audio/impactPlate_heavy_000.ogg",
+      "bytes": 10032,
+      "sha": "ac09f229be6ed3bacc23becd7d1394b360b04654",
+      "sha256": "112d4f93ddcc370b410630f971c0f5d991856102da9c76bc5c5540d388e75aaa"
+    },
+    {
+      "path": "assets/audio/impactPlate_heavy_000.wav",
+      "bytes": 93864,
+      "sha": "6ccd01f85a93d016a0a155b987b0163bb5d54f68",
+      "sha256": "185b5fcc16c63b91a39d758d879e49e210d86a5c4b895b47ddf16dbe5193d7bc"
+    },
+    {
+      "path": "assets/audio/impactPunch_medium_000.ogg",
+      "bytes": 8800,
+      "sha": "d8e0b890ae019533ec190dd2d1decce249ea556e",
+      "sha256": "486988aa2d6440ffc4c62a0e8ccf3c23673ba84424bd4723378d451b7255eb5c"
+    },
+    {
+      "path": "assets/audio/impactPunch_medium_000.wav",
+      "bytes": 82708,
+      "sha": "efc40c7427675c3643febf0de99e07cf65b1fa36",
+      "sha256": "f64358137a71d78d1770c26b1bc8176ef715df96f9ea5c1b0a25fae47a536380"
+    },
+    {
+      "path": "assets/audio/impactPunch_medium_001.ogg",
+      "bytes": 8701,
+      "sha": "33080462eeb8bc99025e669abfef610a6e630815",
+      "sha256": "e71d23abcc3f10d9d6bc9615b2a431fff70b12333a5fcdd9964457564ace4349"
+    },
+    {
+      "path": "assets/audio/impactPunch_medium_001.wav",
+      "bytes": 77168,
+      "sha": "9a0e78dfd880a891a231fe88649532123a830da1",
+      "sha256": "3a229810f85e7e346f1f1be8540213052bdb0f885aba42e0adb08183806ba5b3"
+    },
+    {
+      "path": "assets/audio/impactWood_heavy_000.ogg",
+      "bytes": 6233,
+      "sha": "30fb995aab49d70e51b0c3a226fa45301ad4f760",
+      "sha256": "15ff82332f342c30e469215539e1cc57e11b221aa2cf7e11e811d313a9927f3d"
+    },
+    {
+      "path": "assets/audio/impactWood_heavy_000.wav",
+      "bytes": 59588,
+      "sha": "4e5c4f3b7c8cb3feca8219b3b6cecb1e84ac44a7",
+      "sha256": "aaba847199e3925ef51b31bb6606d3b9bfac9274b62c49a09615e37886b0f9b4"
+    },
+    {
+      "path": "assets/audio/manifest.json",
+      "bytes": 12401,
+      "sha": "57472e5e38d9045a81f78e5ae754829e33b35bff",
+      "sha256": "9faa9e2325663bc9ed29b82644cf8d0aa1aa80c43557f3be0fd1eeb338f5b11f"
+    },
+    {
+      "path": "licenses/audio/bigsoundbank-LICENSE_SOURCE.txt",
+      "bytes": 540,
+      "sha": "1a9ad42670430d1a04bfa9f6c91624594baca13c",
+      "sha256": "b492e75da2f2f9af0cd8b46e07085cd998351c504f533c5e081404a01c43c529"
+    },
+    {
+      "path": "licenses/audio/kenney-impact-sounds-License.txt",
+      "bytes": 608,
+      "sha": "4890fe524751b66f08c31ceeeb8074b50445c461",
+      "sha256": "b49aa9c56b04528b95913de13e506a0f7c5e807b9925db9bfef86af1f91120db"
+    },
+    {
+      "path": "licenses/audio/kenney-sci-fi-sounds-License.txt",
+      "bytes": 571,
+      "sha": "7afc21fd71c486d1b93308c03f5994b8cf463a44",
+      "sha256": "a9767b25c3533f69d03af136480efad08efba19a9f0d89616992b34c79fd6186"
+    }
+  ],
+  "tree": "dd8154da0481fbb7fd0c28b799abd4203fe13dfb",
+  "commit": "bd60537030d560147d7cfc882d63a4f70ce2c7d2",
+  "pagesRunId": 37590088203,
+  "pagesArtifactId": 11468023276,
+  "publicURL": "https://ichinose-pixel.github.io/breach-run-playtest/",
+  "firstDeploymentCommit": "9a8f8113a5e61c83cdd56b17a1e259b9503e2889"
+}
