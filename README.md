@@ -1,21 +1,13 @@
-# ぶっちび / Breach Run — v22 公開試遊版
+# Breach Run / ブリーチラン
 
-公開v20（bd60537030d560147d7cfc882d63a4f70ce2c7d2）から更新したGitHub Pages試遊版です。v21の序盤改修を通常100面と日替わりへつなぐ共通ルールを追加しました。初回iOS 1.0(1)は維持し、この更新でiOSの追加ビルドは行っていません。
+v23 Web playtest. Published on the existing GitHub Pages site.
 
-左右ドラッグで移動・自動射撃。弾を遮る成長板、10命中ごとの+1、上限+999、部隊人数に比例する火力を維持。各10面目の成長板・ボスHPと編成は維持し、左右の射手と敵役割を共通化しています。001〜005はopening-missions.jsの個別配置です。接近敵は指定列を保ち、左右の射手を選んで止めます。003と005の小隊長は着弾まで盾を構え、左右の予告列へ交互に攻撃します。006〜100は一般兵・盾兵・射手が列を維持し、橙の追跡兵 ↔ だけが接近時に追尾します。横移動は横移動兵のみ。通常面の初期成長板を1列にし、空いた列に＋1ルートを設けます。左右射手が不足する側は既存の守備兵を置き換えるため敵総数は増えません。日替わりにも共通適用。旧途中データも位置・人数・進行を保持して敵役割を適用します。010隊長は003/005と同じ左右交互の予告列へ統一。その他のボスはHP・編成・攻撃を維持。性能装備は不要です。
+Reviewed heavy-shooter and captain changes are limited to missions 001–005 and 010. Crowd/shield HP, enemy counts, rewards, progression and shop data are unchanged. Other 94 missions and daily generation are unchanged.
 
-初回クリア100コイン、再クリア20、10面ごとの初回追加100。300コインの最初の外観は本編3面で購入できます。制服・ヘルメット・隊旗は走行射撃プレビュー付きで、性能差はありません。
+Hit recoil, low-health armor break, readable defeat tags, falling enemies and squad advance connect the finishing blow to the cleared route. Human captain explosion origins are moved to the sides and rear; the defeat tag is delayed 0.38 seconds and raised to keep the falling body visible. Combat values are unchanged from the reviewed v23 candidate.
 
-ログインはUTCで1日1回、累計7回。欠席リセットなし。7回目は限定外観、2周目以降は60コイン。特別作戦は本編010後に任意で解放され、毎日3本、初回各25と全達成25。開始日を保存し、日付をまたいでも同じ日の報酬枠で完了します。無料再挑戦、スタミナなし。
+Validation: normal pointer play of 001–005 and 010; final visual regression on 003 and 005; victory checkpoint reload without duplicate rewards. Public response hashes and existing-save resume are checked after deployment. Windows Chrome 390×844; real iPhone testing remains separate.
 
-新保存キー bucchibi-campaign-v2。旧保存原文は削除せず、bucchibi-backup-before-v2 に初回バックアップ。合金残高を等額コインへ、購入済み極光隊・旗・報酬台帳・旧10面記録を保持。旧記録を新100面のクリアへ変換しません。現行v19の途中戦闘は別枠で再開できます。さらに古い非対応形式の途中戦闘も原文を保持しますが、再開は保証しません。
+iOS 1.0(1) remains unchanged. No additional TestFlight build.
 
-BGM/効果音の個別音量・ミュートを保存。初期音量、11素材、射撃・爆発・報酬の相対ミックスと警告ダッキングを維持しています。
-
-HTTPサーバーでindex.htmlを開いてください。ビルド、APIキー不要。純静的ファイルで、広告・課金・分析SDK・外部APIは追加していません。報酬処理はprogression.js、作戦生成はmission-data.jsに分離しています。
-
-検証: Windows Chrome 390×844。v21の003/005は通常増援を取得した同一保存状態から予告無視/回避を比較。003は52人開始、無視16人損耗・4.85秒、回避0人損耗・4.33秒。005は47人開始、無視28人損耗・13.55秒、回避0人損耗・8.78秒。両者とも他敵を撃破した状態から、通常の再開とドラッグだけで比較しています。これら小隊長の仕組みはv22でも同じです。
-
-v22は005→006を実際の獲得データで接続。006最終修正の再確認はその005保存データから継続。010/050/100は選択解放のみの検査データ、3人・標準性能で通常操作。010/050/100の中央＋5と最終成長板を選ぶ手順は既存と同じです。日替わりは救援枠1本を実戦、3枠の共通ルールはデータ確認。全100面の役割、敵総数、ボスHPと編成は検査しましたが、全100面の実戦再走ではありません。
-
-未確認: 初見プレイヤーの長期的な楽しさ、iPhone/Safari実機、長時間性能、今回候補のTestFlight。このWeb更新には親レビュー済みの候補を使用しています。初回iOS 1.0(1)は変更していません。
+Rollback: rollback/db5db9e-v22-before-v23-20261008 at db5db9e2fcabfcdf25dfdb021777c37e613a70e6.
