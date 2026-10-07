@@ -15,7 +15,6 @@ workflows:
         provisioning_profiles:
           - bucchibi-app-store
       vars:
-        BUCCHIBI_BUILD_NUMBER: "1"
         BUCCHIBI_REGISTRATION_CONFIRMED: "1"
         APP_STORE_APPLE_ID: "6820066209"
     scripts:
@@ -24,6 +23,15 @@ workflows:
           set -euo pipefail
           test "${BUCCHIBI_REGISTRATION_CONFIRMED:-}" = "1"
           test -n "${APP_STORE_APPLE_ID:-}"
+      - name: Resolve next existing-app TestFlight build number
+        script: |
+          set -euo pipefail
+          latest=$(app-store-connect get-latest-testflight-build-number "$APP_STORE_APPLE_ID" --platform IOS --all-versions)
+          case "$latest" in ''|*[!0-9]*) echo "Apple build number lookup failed; refusing to reuse a number"; exit 1;; esac
+          test "$latest" -ge 1
+          next=$((latest + 1))
+          echo "BUCCHIBI_BUILD_NUMBER=$next" >> "$CM_ENV"
+          echo "Existing-app TestFlight build: $latest -> $next"
       - name: Install and bundle locked offline game
         script: |
           set -euo pipefail

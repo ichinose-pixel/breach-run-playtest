@@ -1,12 +1,8 @@
 {
-  "previousCommit": "161910fdee2e0c20cd74c18ce0075b80966b6b65",
-  "baseTree": "2d835e971b5a904e09d43f3c003fa6ca6638a8b0",
-  "rollback": "rollback/161910f-v19-before-v20-20261007",
-  "candidate": "3c0890a302dd4237910d717fa251c55085394ec2",
-  "productionOnlyChanges": [
-    "index/README release wording",
-    "credits 100 missions"
-  ],
+  "previousCommit": "db5db9e2fcabfcdf25dfdb021777c37e613a70e6",
+  "baseTree": "d80538b01e962c531deb45a9a28ada2cb32a595d",
+  "rollback": "rollback/db5db9e-v22-before-v23-20261008",
+  "iosCommit": "a001383abe8b7cd2613e23bc3d7ce1856317251c",
   "files": [
     {
       "path": ".nojekyll",
@@ -19,126 +15,6 @@
       "bytes": 11103,
       "sha": "b1e232cd41bddad0fd73f5c467b15a88bcddb820",
       "sha256": "4b179f4700b4876e50fd243816c024d23824576ac64aa7485a898719d4fcb35e"
-    },
-    {
-      "path": "audio.js",
-      "bytes": 13667,
-      "sha": "1762f0c96778cb854ac76d271525f7ec2964e075",
-      "sha256": "7fc2704529351514d90b8554363e76591ffe2e6686c2130523a9e0fe64217296"
-    },
-    {
-      "path": "campaign.css",
-      "bytes": 21371,
-      "sha": "3c3dc5a4add000dd4c2e985e91d90516121fd543",
-      "sha256": "1f4b6f5e6c87454de63730ab95216a22e871c57a5363a95ae1cba65ea61c9f83"
-    },
-    {
-      "path": "campaign.js",
-      "bytes": 61802,
-      "sha": "cb1e7966d13743aa38fd0d0a79dc101a78e8a4dd",
-      "sha256": "f737319ff4d795322d0ed327fa6c1193a399dbf4a417c643c9c1ef82265e9bd5"
-    },
-    {
-      "path": "credits.html",
-      "bytes": 712,
-      "sha": "182687055fef7e654a95317a4641528b965402e3",
-      "sha256": "a2bb481c3681de6929a9de8d6eaaa34e27669e6a3d2e688d8aec946699feeca7"
-    },
-    {
-      "path": "index.html",
-      "bytes": 1130,
-      "sha": "dc841e7edad698aa7ee3c2bd6cf20e679abe3570",
-      "sha256": "00e3e15d3209f6f07dca894c0d0c4b56b3060a91da86f8478cf18d8a6da839d6"
-    },
-    {
-      "path": "mission-data.js",
-      "bytes": 2758,
-      "sha": "3abea61bd44e8c3a6167a9743e8fab88fe1a9abf",
-      "sha256": "3577cb2d102a58fc59c5d8270e97720a7b3a2d4b24c77ad2e52447b8e9b161bc"
-    },
-    {
-      "path": "progression.js",
-      "bytes": 6203,
-      "sha": "bfbdc1e25ece41e7b784a1313444126514302408",
-      "sha256": "80224c0da56801b7555c8a6cdaff45fe16306ecde34527bb4159275ea3437af8"
-    },
-    {
-      "path": "README.md",
-      "bytes": 2672,
-      "sha": "6556dfc2de4d731a940176f7a4d433b2881b469f",
-      "sha256": "caaabef883e3dad3ab809c48391828681cff6777d31f95f65fcd06506a8b4c50"
-    },
-    {
-      "path": "spectacle.js",
-      "bytes": 5088,
-      "sha": "2b712312af37877bce205ee22e2532c3e13f7927",
-      "sha256": "7ab109e88a9a4acecf43059118b54f2e1023826a04727a93cbe53e7a126e13d0"
-    },
-    {
-      "path": "stages-v19.js",
-      "bytes": 18991,
-      "sha": "f0c5a240856f64b418d8688439eb05a3cea813d5",
-      "sha256": "5b486e3a0d4ce5ed44668be4831a18c15c4c1c465034d4d7ed778ba2da5ad621"
-    },
-    {
-      "path": "stages.js",
-      "bytes": 18991,
-      "sha": "f0c5a240856f64b418d8688439eb05a3cea813d5",
-      "sha256": "5b486e3a0d4ce5ed44668be4831a18c15c4c1c465034d4d7ed778ba2da5ad621"
-    },
-    {
-      "path": "terrain.js",
-      "bytes": 6894,
-      "sha": "45ee9860c298d20fa72499676fe70353a319a340",
-      "sha256": "7bfb9245028fae21af4294090b05031322d053181a748f884ceb8a895cab280f"
-    },
-    {
-      "path": "THIRD_PARTY_NOTICES.txt",
-      "bytes": 2100,
-      "sha": "328e80ebc44e407eedb7bd5f8e3bd2b89c843864",
-      "sha256": "cec8521ec8a6fe3520d292fe171f8544db4d041561170b2acf81420bddcdc568"
-    },
-    {
-      "path": "vehicles.js",
-      "bytes": 7905,
-      "sha": "c1d053a4ad1a3d429f344fe741349c9593eccae3",
-      "sha256": "b30201e5995fad806c809f89561450aa3679937437df650b8410ee1481802bcd"
-    },
-    {
-      "path": "assets/soldier.gltf",
-      "bytes": 474206,
-      "sha": "2eb0fba835c9dcc7ab6332a610fcc43e396a5003",
-      "sha256": "cab0013dbb0f73c175a11d408cee41d59ea861b03f41feafdd113d5669f4f22e"
-    },
-    {
-      "path": "vendor/BufferGeometryUtils.js",
-      "bytes": 31768,
-      "sha": "cc3e4ef8ea6f15c52e7cf132b7292632f6dcad10",
-      "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6"
-    },
-    {
-      "path": "vendor/GLTFLoader.js",
-      "bytes": 109826,
-      "sha": "d0de3886a21ce33b2fffc62bb68712f0607147cc",
-      "sha256": "84dfc4625abbec3c712581a4417e70ca2a88a97640c90e2a1e7fd2881ffd081f"
-    },
-    {
-      "path": "vendor/LICENSE",
-      "bytes": 1081,
-      "sha": "d33709fbf00f10b928bae20baf72a5c6da92d03a",
-      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
-    },
-    {
-      "path": "vendor/SkeletonUtils.js",
-      "bytes": 8421,
-      "sha": "1f25e4cbbc9a00f8b012cc5bac9a136d49353619",
-      "sha256": "e0dcb498b3383a032e6e934fcc5bfe07b5e99d4d4d1c77a7956fe935304abf5c"
-    },
-    {
-      "path": "vendor/three.module.js",
-      "bytes": 1284652,
-      "sha": "fcf5e09d8ada1f25b9c3218ce9ce65e67fb54eb5",
-      "sha256": "5916c8dfb5f4e3eede312de305345868d4a0a8105383b080c6985565d6e79b46"
     },
     {
       "path": "assets/audio/0437.mp3",
@@ -255,6 +131,54 @@
       "sha256": "9faa9e2325663bc9ed29b82644cf8d0aa1aa80c43557f3be0fd1eeb338f5b11f"
     },
     {
+      "path": "assets/soldier.gltf",
+      "bytes": 474206,
+      "sha": "2eb0fba835c9dcc7ab6332a610fcc43e396a5003",
+      "sha256": "cab0013dbb0f73c175a11d408cee41d59ea861b03f41feafdd113d5669f4f22e"
+    },
+    {
+      "path": "audio.js",
+      "bytes": 13667,
+      "sha": "1762f0c96778cb854ac76d271525f7ec2964e075",
+      "sha256": "7fc2704529351514d90b8554363e76591ffe2e6686c2130523a9e0fe64217296"
+    },
+    {
+      "path": "campaign.css",
+      "bytes": 21371,
+      "sha": "3c3dc5a4add000dd4c2e985e91d90516121fd543",
+      "sha256": "1f4b6f5e6c87454de63730ab95216a22e871c57a5363a95ae1cba65ea61c9f83"
+    },
+    {
+      "path": "campaign.js",
+      "bytes": 65512,
+      "sha": "a765500cee3311480fbe683415748d4b9e3c9285",
+      "sha256": "db4ce695965ecc33d5b1030bf2aeff6f73d961dc313c3263d2fcbdbb1e46de9d"
+    },
+    {
+      "path": "credits.html",
+      "bytes": 712,
+      "sha": "182687055fef7e654a95317a4641528b965402e3",
+      "sha256": "a2bb481c3681de6929a9de8d6eaaa34e27669e6a3d2e688d8aec946699feeca7"
+    },
+    {
+      "path": "enemy-rules.js",
+      "bytes": 1632,
+      "sha": "782331424a8e521fd2313e1fd1b402ca32450f60",
+      "sha256": "2e941e58bc426dab621d8600cc5a0f815068be4b0a57becbc2c875956c678a4e"
+    },
+    {
+      "path": "impact-trial.js",
+      "bytes": 698,
+      "sha": "9e750a761b527fa965c0c86ef59de9575f6697f5",
+      "sha256": "bf47d33cc416bf8ea5abdc952f3fb9cfc20efbb4626a6976584e0a19fa782519"
+    },
+    {
+      "path": "index.html",
+      "bytes": 1130,
+      "sha": "dc841e7edad698aa7ee3c2bd6cf20e679abe3570",
+      "sha256": "00e3e15d3209f6f07dca894c0d0c4b56b3060a91da86f8478cf18d8a6da839d6"
+    },
+    {
       "path": "licenses/audio/bigsoundbank-LICENSE_SOURCE.txt",
       "bytes": 540,
       "sha": "1a9ad42670430d1a04bfa9f6c91624594baca13c",
@@ -271,12 +195,105 @@
       "bytes": 571,
       "sha": "7afc21fd71c486d1b93308c03f5994b8cf463a44",
       "sha256": "a9767b25c3533f69d03af136480efad08efba19a9f0d89616992b34c79fd6186"
+    },
+    {
+      "path": "mission-data.js",
+      "bytes": 3102,
+      "sha": "573b7940bcc2256cd3f680b352c2ad7a8fb2c131",
+      "sha256": "135c29c6abde1c3eb5bae34c1c3080299721bc2803cde195c3aa509f54d473c7"
+    },
+    {
+      "path": "opening-missions.js",
+      "bytes": 4077,
+      "sha": "6ca4400b0727975c3110818209d6e8e3e0d0dd7c",
+      "sha256": "9e368bc4a841160e63479d6080581d3c31b98fe34f1e92a038001e1ec07bd50e"
+    },
+    {
+      "path": "progression.js",
+      "bytes": 6203,
+      "sha": "bfbdc1e25ece41e7b784a1313444126514302408",
+      "sha256": "80224c0da56801b7555c8a6cdaff45fe16306ecde34527bb4159275ea3437af8"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1121,
+      "sha": "996a137bc5fff7d1ed8f324915546a8261fa5927",
+      "sha256": "092da0c22bb9a7c8c992b44fafe080e3ef38742b03f7bf99d9db2e4c98ca1884"
+    },
+    {
+      "path": "spectacle.js",
+      "bytes": 6334,
+      "sha": "7fc82c38a3bdcc0490e320737ed42e53c84e7642",
+      "sha256": "ff82aeba10bb63b46da0330bac7e4692e043ff8848e5b58011220a1a26e4c37b"
+    },
+    {
+      "path": "stages-v19.js",
+      "bytes": 18991,
+      "sha": "f0c5a240856f64b418d8688439eb05a3cea813d5",
+      "sha256": "5b486e3a0d4ce5ed44668be4831a18c15c4c1c465034d4d7ed778ba2da5ad621"
+    },
+    {
+      "path": "stages.js",
+      "bytes": 18991,
+      "sha": "f0c5a240856f64b418d8688439eb05a3cea813d5",
+      "sha256": "5b486e3a0d4ce5ed44668be4831a18c15c4c1c465034d4d7ed778ba2da5ad621"
+    },
+    {
+      "path": "terrain.js",
+      "bytes": 6894,
+      "sha": "45ee9860c298d20fa72499676fe70353a319a340",
+      "sha256": "7bfb9245028fae21af4294090b05031322d053181a748f884ceb8a895cab280f"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.txt",
+      "bytes": 2100,
+      "sha": "328e80ebc44e407eedb7bd5f8e3bd2b89c843864",
+      "sha256": "cec8521ec8a6fe3520d292fe171f8544db4d041561170b2acf81420bddcdc568"
+    },
+    {
+      "path": "vehicles.js",
+      "bytes": 7905,
+      "sha": "c1d053a4ad1a3d429f344fe741349c9593eccae3",
+      "sha256": "b30201e5995fad806c809f89561450aa3679937437df650b8410ee1481802bcd"
+    },
+    {
+      "path": "vendor/BufferGeometryUtils.js",
+      "bytes": 31768,
+      "sha": "cc3e4ef8ea6f15c52e7cf132b7292632f6dcad10",
+      "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6"
+    },
+    {
+      "path": "vendor/GLTFLoader.js",
+      "bytes": 109826,
+      "sha": "d0de3886a21ce33b2fffc62bb68712f0607147cc",
+      "sha256": "84dfc4625abbec3c712581a4417e70ca2a88a97640c90e2a1e7fd2881ffd081f"
+    },
+    {
+      "path": "vendor/LICENSE",
+      "bytes": 1081,
+      "sha": "d33709fbf00f10b928bae20baf72a5c6da92d03a",
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    },
+    {
+      "path": "vendor/SkeletonUtils.js",
+      "bytes": 8421,
+      "sha": "1f25e4cbbc9a00f8b012cc5bac9a136d49353619",
+      "sha256": "e0dcb498b3383a032e6e934fcc5bfe07b5e99d4d4d1c77a7956fe935304abf5c"
+    },
+    {
+      "path": "vendor/three.module.js",
+      "bytes": 1284652,
+      "sha": "fcf5e09d8ada1f25b9c3218ce9ce65e67fb54eb5",
+      "sha256": "5916c8dfb5f4e3eede312de305345868d4a0a8105383b080c6985565d6e79b46"
     }
   ],
-  "tree": "dd8154da0481fbb7fd0c28b799abd4203fe13dfb",
-  "commit": "bd60537030d560147d7cfc882d63a4f70ce2c7d2",
-  "pagesRunId": 37590088203,
-  "pagesArtifactId": 11468023276,
-  "publicURL": "https://ichinose-pixel.github.io/breach-run-playtest/",
-  "firstDeploymentCommit": "9a8f8113a5e61c83cdd56b17a1e259b9503e2889"
+  "changed": [
+    "campaign.js",
+    "impact-trial.js",
+    "mission-data.js",
+    "README.md",
+    "spectacle.js"
+  ],
+  "commit": "0248b3ea19e203e6fb0b3181dbb1072a254a455e",
+  "tree": "eb3ceceee7d40a58987cf0a3a5a276e4e3802298"
 }

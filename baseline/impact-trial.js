@@ -1,0 +1,3 @@
+// Fixed, review-scoped tuning. No health changes based on player force or elapsed survival.
+export function withImpactTrial(stage,index){if(![0,1,2,3,4,9].includes(index))return stage;const s=structuredClone(stage);s.impactTrial=true;const shooterHP=[128,144,144,160,144];let shooter=0;for(const o of s.objects){if(o.type!=='enemy')continue;o.impactTrial=true;if(o.role==='shooter'){o.impactElite=true;o.hp=index===9?160:shooterHP[index];o.firstWarningDelay=.08;o.warningDuration=1.35;if(index===0&&shooter===1)o.spawnAt=14.5;if(index===1&&shooter===1)o.spawnAt=16.5;if(index===3&&shooter===2)o.spawnAt=17;shooter++;}if(o.boss){o.hp=index===2?520:index===4?760:2200;o.introBoss=true;}}
+return s;}

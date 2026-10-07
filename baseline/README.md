@@ -1,17 +1,13 @@
-# ぶっちび / Breach Run — v20 試遊版
+# Breach Run / ブリーチラン
 
-公開v19（161910fdee2e0c20cd74c18ce0075b80966b6b65）から分岐した、10エリア×10作戦の候補です。GitHub Pagesで公開する100作戦試遊版です。TestFlight提出は行っていません。
+v23 Web playtest. Published on the existing GitHub Pages site.
 
-左右ドラッグで移動・自動射撃。弾を遮る成長板、10命中ごとの+1、上限+999、部隊人数に比例する火力を維持。各10面目はv19の代表10帯と同じ敵・板・ボス配置です。通常面は短い敵編成と配置・順序の変化を持ち、性能装備は不要です。
+Reviewed heavy-shooter and captain changes are limited to missions 001–005 and 010. Crowd/shield HP, enemy counts, rewards, progression and shop data are unchanged. Other 94 missions and daily generation are unchanged.
 
-初回クリア100コイン、再クリア20、10面ごとの初回追加100。300コインの最初の外観は本編3面で購入できます。制服・ヘルメット・隊旗は走行射撃プレビュー付きで、性能差はありません。
+Hit recoil, low-health armor break, readable defeat tags, falling enemies and squad advance connect the finishing blow to the cleared route. Human captain explosion origins are moved to the sides and rear; the defeat tag is delayed 0.38 seconds and raised to keep the falling body visible. Combat values are unchanged from the reviewed v23 candidate.
 
-ログインはUTCで1日1回、累計7回。欠席リセットなし。7回目は限定外観、2周目以降は60コイン。特別作戦は本編010後に任意で解放され、毎日3本、初回各25と全達成25。開始日を保存し、日付をまたいでも同じ日の報酬枠で完了します。無料再挑戦、スタミナなし。
+Validation: normal pointer play of 001–005 and 010; final visual regression on 003 and 005; victory checkpoint reload without duplicate rewards. Public response hashes and existing-save resume are checked after deployment. Windows Chrome 390×844; real iPhone testing remains separate.
 
-新保存キー bucchibi-campaign-v2。旧保存原文は削除せず、bucchibi-backup-before-v2 に初回バックアップ。合金残高を等額コインへ、購入済み極光隊・旗・報酬台帳・旧10面記録を保持。旧記録を新100面のクリアへ変換しません。現行v19の途中戦闘は別枠で再開できます。さらに古い非対応形式の途中戦闘も原文を保持しますが、再開は保証しません。
+iOS 1.0(1) remains unchanged. No additional TestFlight build.
 
-BGM/効果音の個別音量・ミュートを保存。初期音量、11素材、射撃・爆発・報酬の相対ミックスと警告ダッキングを維持しています。
-
-HTTPサーバーでindex.htmlを開いてください。ビルド、APIキー不要。純静的ファイルで、広告・課金・分析SDK・外部APIは追加していません。報酬処理はprogression.js、作戦生成はmission-data.jsに分離しています。
-
-検証はChromeの390/320pxと通常入力の代表プレイ。本編001→002→003は実際の獲得データを連続使用。010/050/091/100と特別作戦3本は選択解放のみの検査データを使い、戦闘値は初期性能のまま通常操作でクリア。全100面の生成・解放・報酬整合性は検査済みですが、全100面の実戦完走とは異なります。iPhone/Safari実機、長時間性能、TestFlightは未確認です。時計と残高はローカル管理であり、実課金向けの不正防止基盤ではありません。
+Rollback: rollback/db5db9e-v22-before-v23-20261008 at db5db9e2fcabfcdf25dfdb021777c37e613a70e6.
