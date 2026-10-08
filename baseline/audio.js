@@ -76,3 +76,6 @@ BattleAudio.prototype.effect=function(kind,intensity=0){
  if(kind==='finish-debris'){this.recorded('metal',.13,.3);this.recorded('plate',.10,.4,.09);}
  if(kind==='elite-fall'){this.recorded('metal',.18,.25);this.tone(240,.12,.08,'triangle',t,90);}
 };
+
+const beforeBattleSignalEffect=BattleAudio.prototype.effect;
+BattleAudio.prototype.effect=function(kind,intensity=0){if(!['enemy-title','panel-tier','panel-capture'].includes(kind))return beforeBattleSignalEffect.call(this,kind,intensity);if(!this.ctx||!this.enabled)return;const t=this.ctx.currentTime;if(t<(this.nextSignalCue||0))return;this.nextSignalCue=t+.3;if(kind==='enemy-title'){this.recorded('metal',.15,.22);this.tone(intensity?130:180,.19,.07,'triangle',t,80);}else if(kind==='panel-tier'){this.recorded('metal',.10,.15);this.tone([330,440,554,659][intensity],.14,.055,'triangle',t);}else{this.tone(440,.2,.05,'triangle',t);this.tone(659,.22,.035,'triangle',t+.065);}};

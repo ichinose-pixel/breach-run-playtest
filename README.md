@@ -1,7 +1,7 @@
-# Bucchibi iOS — v25 integration
+# Bucchibi iOS — v27 integration
 
-Bundles Web release 2e261171f140d34811bb4905f963e8f5b4ffcb6d exactly (49 baseline files).
+Bundles Web release d5be2249f19dcb7073056038b8aee4be1d3d0f44 exactly (51 baseline files).
 
-Approved grounded-body and earned-reward finale. Gameplay and saved progress are unchanged. Native adapters, app identity, dependencies, privacy, signing configuration and the existing cloud workflow are unchanged. No encryption implementation, cryptographic dependency or network endpoint is added.
+Approved priority enemy signals and numeral-first reinforcement panels. Gameplay, rewards and saved progress are unchanged. Native adapters, identity, dependencies, privacy, signing configuration and the existing manual cloud workflow are unchanged. No new network endpoint or cryptographic dependency.
 
-Offline bundle, seven persistence tests and browser fallback checks passed. These are not a signed iOS/device build. No cloud build or tester-distribution change was performed by this integration. The previous build remains held. The cloud operator owns the next build and distribution checks.
+Offline bundle and persistence checks use the existing adapter. This is not a signed iOS/device build. No cloud build or tester-distribution change is requested. The previous build remains held.

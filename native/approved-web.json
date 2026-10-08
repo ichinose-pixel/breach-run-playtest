@@ -1,11 +1,23 @@
 {
-  "commit": "2e261171f140d34811bb4905f963e8f5b4ffcb6d",
+  "commit": "d5be2249f19dcb7073056038b8aee4be1d3d0f44",
   "files": [
     {
       "path": ".nojekyll",
       "bytes": 0,
       "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "README.md",
+      "bytes": 494,
+      "sha": "04e6b4e78830d66aaa3397614e8c2a80d0e36b1d",
+      "sha256": "c82cd60752e89e53abf2a613dcba7ee8b04d9100ec4165c28143cc78101d193e"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.txt",
+      "bytes": 2100,
+      "sha": "328e80ebc44e407eedb7bd5f8e3bd2b89c843864",
+      "sha256": "cec8521ec8a6fe3520d292fe171f8544db4d041561170b2acf81420bddcdc568"
     },
     {
       "path": "actors.js",
@@ -135,9 +147,21 @@
     },
     {
       "path": "audio.js",
-      "bytes": 15209,
-      "sha": "67e53618dfc9e2ccf94ef3858dae76d3b83adabb",
-      "sha256": "40081275285fbeef84814d2e688bb2b35699822cd8987acdf4e1a7084276a819"
+      "bytes": 15892,
+      "sha": "594f852a95bbb3482d0eaeae059e30bbf1bd1cea",
+      "sha256": "3e541073d149ef8385ff72a023e986c8d2e0898a4baffb8f6104d91017113ec3"
+    },
+    {
+      "path": "battle-signals.css",
+      "bytes": 2371,
+      "sha": "4b7b2dffa75ef5c7009d074fe406690f732bad8d",
+      "sha256": "c00a8457b87e3c9aa67d69b69d407340be688af98b6af3766c6804a224438934"
+    },
+    {
+      "path": "battle-signals.js",
+      "bytes": 9008,
+      "sha": "a9b360f49c7789c834dec82fdad247bcc09ee40b",
+      "sha256": "4891b25497e4453236b50830b2444c541e22fbde7c759435e326fae3d76023e4"
     },
     {
       "path": "campaign.css",
@@ -147,9 +171,9 @@
     },
     {
       "path": "campaign.js",
-      "bytes": 66401,
-      "sha": "bcd2e94cae3e1886516893c7b1f8b07d7e9b4b4d",
-      "sha256": "dbf7bc67a0bccabcf173a56240c8176c27d40db22f4d870e895e2db41f95d8a7"
+      "bytes": 67085,
+      "sha": "d91ca9d19fe5f2ee47b2ccb773008497254d262a",
+      "sha256": "10845b04be12e3ee05874b1a7065e32f16fc8b6d21c176e1518caaeccf2be1cc"
     },
     {
       "path": "credits.html",
@@ -183,9 +207,9 @@
     },
     {
       "path": "index.html",
-      "bytes": 1171,
-      "sha": "11f726d65603fb0d43fb2b2efa4fc35a1824ece1",
-      "sha256": "afa1e501da151863635cd4a1fd2a6aa7be8b4d31354b35da3ac557df43ba213c"
+      "bytes": 1220,
+      "sha": "9b79af4bda4037f34b77a61dc3b58a0e9dfefbdd",
+      "sha256": "77063c8eda07fde9f87997401e11cd606100c9a5992172069fe9d1e4058f4d56"
     },
     {
       "path": "licenses/audio/bigsoundbank-LICENSE_SOURCE.txt",
@@ -224,12 +248,6 @@
       "sha256": "80224c0da56801b7555c8a6cdaff45fe16306ecde34527bb4159275ea3437af8"
     },
     {
-      "path": "README.md",
-      "bytes": 494,
-      "sha": "04e6b4e78830d66aaa3397614e8c2a80d0e36b1d",
-      "sha256": "c82cd60752e89e53abf2a613dcba7ee8b04d9100ec4165c28143cc78101d193e"
-    },
-    {
       "path": "spectacle.js",
       "bytes": 6334,
       "sha": "7fc82c38a3bdcc0490e320737ed42e53c84e7642",
@@ -252,12 +270,6 @@
       "bytes": 6894,
       "sha": "45ee9860c298d20fa72499676fe70353a319a340",
       "sha256": "7bfb9245028fae21af4294090b05031322d053181a748f884ceb8a895cab280f"
-    },
-    {
-      "path": "THIRD_PARTY_NOTICES.txt",
-      "bytes": 2100,
-      "sha": "328e80ebc44e407eedb7bd5f8e3bd2b89c843864",
-      "sha256": "cec8521ec8a6fe3520d292fe171f8544db4d041561170b2acf81420bddcdc568"
     },
     {
       "path": "vehicles.js",
