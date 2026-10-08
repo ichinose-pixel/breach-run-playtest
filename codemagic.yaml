@@ -49,7 +49,7 @@ workflows:
           set -euo pipefail
           keychain initialize
           keychain add-certificates
-          xcode-project use-profiles --custom-export-options='{"testFlightInternalTestingOnly":true}'
+          xcode-project use-profiles
       - name: Archive and export once
         script: |
           set -euo pipefail
