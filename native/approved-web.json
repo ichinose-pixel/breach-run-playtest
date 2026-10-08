@@ -1,8 +1,5 @@
 {
-  "previousCommit": "db5db9e2fcabfcdf25dfdb021777c37e613a70e6",
-  "baseTree": "d80538b01e962c531deb45a9a28ada2cb32a595d",
-  "rollback": "rollback/db5db9e-v22-before-v23-20261008",
-  "iosCommit": "a001383abe8b7cd2613e23bc3d7ce1856317251c",
+  "commit": "2e261171f140d34811bb4905f963e8f5b4ffcb6d",
   "files": [
     {
       "path": ".nojekyll",
@@ -138,9 +135,9 @@
     },
     {
       "path": "audio.js",
-      "bytes": 13667,
-      "sha": "1762f0c96778cb854ac76d271525f7ec2964e075",
-      "sha256": "7fc2704529351514d90b8554363e76591ffe2e6686c2130523a9e0fe64217296"
+      "bytes": 15209,
+      "sha": "67e53618dfc9e2ccf94ef3858dae76d3b83adabb",
+      "sha256": "40081275285fbeef84814d2e688bb2b35699822cd8987acdf4e1a7084276a819"
     },
     {
       "path": "campaign.css",
@@ -150,9 +147,9 @@
     },
     {
       "path": "campaign.js",
-      "bytes": 65512,
-      "sha": "a765500cee3311480fbe683415748d4b9e3c9285",
-      "sha256": "db4ce695965ecc33d5b1030bf2aeff6f73d961dc313c3263d2fcbdbb1e46de9d"
+      "bytes": 66401,
+      "sha": "bcd2e94cae3e1886516893c7b1f8b07d7e9b4b4d",
+      "sha256": "dbf7bc67a0bccabcf173a56240c8176c27d40db22f4d870e895e2db41f95d8a7"
     },
     {
       "path": "credits.html",
@@ -161,10 +158,22 @@
       "sha256": "a2bb481c3681de6929a9de8d6eaaa34e27669e6a3d2e688d8aec946699feeca7"
     },
     {
+      "path": "defeat.js",
+      "bytes": 8843,
+      "sha": "39accadc24ce88a47656b74969f35e3ec8c7add2",
+      "sha256": "51b2df318c8e9d70e398c4dd83c8e1a9cb5bbf0f7da1a78568985350ca0afdf0"
+    },
+    {
       "path": "enemy-rules.js",
       "bytes": 1632,
       "sha": "782331424a8e521fd2313e1fd1b402ca32450f60",
       "sha256": "2e941e58bc426dab621d8600cc5a0f815068be4b0a57becbc2c875956c678a4e"
+    },
+    {
+      "path": "finale.css",
+      "bytes": 3293,
+      "sha": "49e07da39ca1192bce0cfcafc5261006156a6070",
+      "sha256": "487c253e83cd251a0edbe00d57079ce24f697130a04b034c9209655e91856989"
     },
     {
       "path": "impact-trial.js",
@@ -174,9 +183,9 @@
     },
     {
       "path": "index.html",
-      "bytes": 1130,
-      "sha": "dc841e7edad698aa7ee3c2bd6cf20e679abe3570",
-      "sha256": "00e3e15d3209f6f07dca894c0d0c4b56b3060a91da86f8478cf18d8a6da839d6"
+      "bytes": 1171,
+      "sha": "11f726d65603fb0d43fb2b2efa4fc35a1824ece1",
+      "sha256": "afa1e501da151863635cd4a1fd2a6aa7be8b4d31354b35da3ac557df43ba213c"
     },
     {
       "path": "licenses/audio/bigsoundbank-LICENSE_SOURCE.txt",
@@ -216,9 +225,9 @@
     },
     {
       "path": "README.md",
-      "bytes": 1121,
-      "sha": "996a137bc5fff7d1ed8f324915546a8261fa5927",
-      "sha256": "092da0c22bb9a7c8c992b44fafe080e3ef38742b03f7bf99d9db2e4c98ca1884"
+      "bytes": 494,
+      "sha": "04e6b4e78830d66aaa3397614e8c2a80d0e36b1d",
+      "sha256": "c82cd60752e89e53abf2a613dcba7ee8b04d9100ec4165c28143cc78101d193e"
     },
     {
       "path": "spectacle.js",
@@ -252,9 +261,9 @@
     },
     {
       "path": "vehicles.js",
-      "bytes": 7905,
-      "sha": "c1d053a4ad1a3d429f344fe741349c9593eccae3",
-      "sha256": "b30201e5995fad806c809f89561450aa3679937437df650b8410ee1481802bcd"
+      "bytes": 8681,
+      "sha": "4c7dd03d08fcdde8749018de6b401087debec25b",
+      "sha256": "b31c66ba2135e2d31a29f94dc17020d3f612e43b92f5c50e4c528504fd9cc74a"
     },
     {
       "path": "vendor/BufferGeometryUtils.js",
@@ -286,14 +295,5 @@
       "sha": "fcf5e09d8ada1f25b9c3218ce9ce65e67fb54eb5",
       "sha256": "5916c8dfb5f4e3eede312de305345868d4a0a8105383b080c6985565d6e79b46"
     }
-  ],
-  "changed": [
-    "campaign.js",
-    "impact-trial.js",
-    "mission-data.js",
-    "README.md",
-    "spectacle.js"
-  ],
-  "commit": "0248b3ea19e203e6fb0b3181dbb1072a254a455e",
-  "tree": "eb3ceceee7d40a58987cf0a3a5a276e4e3802298"
+  ]
 }

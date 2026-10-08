@@ -62,3 +62,17 @@ BattleAudio.prototype.effect=function(kind,intensity=0){if(!this.ctx||!this.enab
 
 BattleAudio.prototype.setLevels=function(a){if(!this.ctx)return;this.seUser.gain.setTargetAtTime(a.seMuted?0:a.se,this.ctx.currentTime,.025);this.bgmUser.gain.setTargetAtTime(a.bgmMuted?0:a.bgm,this.ctx.currentTime,.025);};
 const battleAudio=new BattleAudio();
+// Timeline cues are emitted by the visual director; pause/skip schedules no future sound.
+const beforeDefeatEffect=BattleAudio.prototype.effect;
+BattleAudio.prototype.effect=function(kind,intensity=0){
+ if(kind==='kill'){if(!this.ctx||!this.enabled)return;const t=this.ctx.currentTime;if(t<(this.nextKillCue||0))return;this.nextKillCue=t+.085;this.recorded(intensity%2?'hit0':'hit1',.14,.12);this.tone([330,392,440,523][Math.min(3,Math.floor(intensity/3))],.09,.055,'triangle',t);return;}
+ if(!kind.startsWith('finish-')&&kind!=='elite-fall'&&kind!=='body-land')return beforeDefeatEffect.call(this,kind,intensity);
+ if(!this.ctx||!this.enabled)return;const t=this.ctx.currentTime;
+ if(kind==='body-land'){this.recorded('hit1',.22,.2);this.hiss(.22,.1,650,t);}
+ if(kind==='finish-reward'){this.duck(.55);this.recorded('load',.3,.38);this.recorded('metal',.17,.28);[440,554.37,659.25].forEach(f=>this.brass(f,t,.45,.10));}
+ if(kind==='finish-hit'){this.shotQuietUntil=t+2;for(const shot of this.shotSources||[])try{shot.stop(t+.015)}catch{}this.duck(2);this.recorded('metal',.30,.2);this.tone(135,.22,.19,'triangle',t,60);}
+ if(kind==='finish-break'){this.recorded('plate',.34,.42);this.recorded('glass',.12,.22);}
+ if(kind==='finish-blast'){this.recorded('blast',.46,1.15);this.tone(110,.7,.21,'triangle',t,42);this.hiss(.6,.16,420,t,this.fx,.5);}
+ if(kind==='finish-debris'){this.recorded('metal',.13,.3);this.recorded('plate',.10,.4,.09);}
+ if(kind==='elite-fall'){this.recorded('metal',.18,.25);this.tone(240,.12,.08,'triangle',t,90);}
+};
