@@ -17,7 +17,7 @@ export function paintBattleTag(ctx,top,bottom,hp,color,o){
   ctx.strokeStyle=positive&&tier>=2?'#895026':'#15383e';ctx.lineWidth=13;ctx.strokeText(top,256,157);
   const shine=ctx.createLinearGradient(0,65,0,238);shine.addColorStop(0,'#fffbe8');shine.addColorStop(.38,face);shine.addColorStop(.46,positive&&tier>=2?'#d48d26':positive?'#80d7e3':'#cd5970');shine.addColorStop(1,face);ctx.fillStyle=shine;ctx.fillText(top,256,151);
   ctx.fillStyle=positive?face:'#ff879e';for(const x of[18,468])ctx.fillRect(x,248,26,12);
-  ctx.font='900 26px system-ui';ctx.fillStyle='#fff5d1';ctx.fillText(collect?'部隊合流':zero?'転換':positive?(tier>=2?'増援 集結':'増援'):'減員',256,280);
+  ctx.font='900 26px system-ui';ctx.fillStyle='#fff5d1';ctx.fillText(collect?'部隊合流':zero?'転換':positive?(o.focusPickup?'中央で回収':tier>=2?'増援 集結':'増援'):'減員',256,280);
   if(o.live){const n=Math.min(10,Math.round((o.shotFraction||0)*10));for(let i=0;i<10;i++){ctx.fillStyle=i<n?face:'#29434b';ctx.fillRect(78+i*36,302,29,9)}}
   ctx.restore();return;
  }

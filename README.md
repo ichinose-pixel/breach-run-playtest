@@ -1,7 +1,9 @@
-# Bucchibi iOS — v27 integration
+# Bucchibi iOS — v28 integration
 
-Bundles Web release d5be2249f19dcb7073056038b8aee4be1d3d0f44 exactly (51 baseline files).
+Bundles approved Web release 1b72b27d98eeb15d2d788d931d8a71720292a82f (52 baseline files).
 
-Approved priority enemy signals and numeral-first reinforcement panels. Gameplay, rewards and saved progress are unchanged. Native adapters, identity, dependencies, privacy, signing configuration and the existing manual cloud workflow are unchanged. No new network endpoint or cryptographic dependency.
+Includes difficulty, reinforcement collection, boss HUD and large-formation escape fixes. Existing assets, sounds, rewards, identity, native storage adapter, dependencies and managed signing remain unchanged. Older checkpoints retain their rules.
 
-Offline bundle and persistence checks use the existing adapter. This is not a signed iOS/device build. No cloud build or tester-distribution change is requested. The previous build remains held.
+The manual ios-owner-testflight workflow resolves the latest App Store Connect build across versions and uses latest + 1. Marketing version remains 1.0. Do not use the local fallback build number for an upload.
+
+Stage 100 full clear is NOT verified. Local bundle and persistence checks are not a signed device build.

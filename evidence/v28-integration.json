@@ -1,0 +1,31 @@
+{
+  "webCommit": "1b72b27d98eeb15d2d788d931d8a71720292a82f",
+  "runtimeFiles": 52,
+  "webCDNHashMatches": 52,
+  "changes": "Difficulty, collection, readable boss HUD, visible large-formation escape; native safearea matches compact HUD.",
+  "assetsAudioRewardsUnchanged": true,
+  "nativeAdapterDependenciesIdentitySigningUnchanged": true,
+  "nativeUnitTestsPassed": 7,
+  "saveCompatibility": {
+    "method": "Actual built native-entry bundle in Chrome web fallback, local resource fulfillment; normal Continue/Pause/Reload and synthetic native safearea/background. Not an iOS device or signing check.",
+    "sameCheckpoint": true,
+    "coinsBefore": 200,
+    "coinsAfter": 200,
+    "recordsRetained": 100,
+    "backgroundPauses": true,
+    "foregroundRemainsPaused": true,
+    "hudSafearea": {
+      "x": 8,
+      "y": 52,
+      "width": 242.96875,
+      "height": 58
+    },
+    "loadedAudio": 11,
+    "errors": []
+  },
+  "stage100FullClearVerified": false,
+  "marketingVersion": "1.0",
+  "buildNumber": "Existing workflow resolves latest App Store Connect TestFlight build across versions + 1 at build time; numeric value not yet resolved.",
+  "cloudBuildStarted": false,
+  "signedArchiveProduced": false
+}

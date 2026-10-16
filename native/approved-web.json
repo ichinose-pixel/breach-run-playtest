@@ -1,23 +1,11 @@
 {
-  "commit": "d5be2249f19dcb7073056038b8aee4be1d3d0f44",
+  "commit": "1b72b27d98eeb15d2d788d931d8a71720292a82f",
   "files": [
     {
       "path": ".nojekyll",
       "bytes": 0,
       "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    {
-      "path": "README.md",
-      "bytes": 494,
-      "sha": "04e6b4e78830d66aaa3397614e8c2a80d0e36b1d",
-      "sha256": "c82cd60752e89e53abf2a613dcba7ee8b04d9100ec4165c28143cc78101d193e"
-    },
-    {
-      "path": "THIRD_PARTY_NOTICES.txt",
-      "bytes": 2100,
-      "sha": "328e80ebc44e407eedb7bd5f8e3bd2b89c843864",
-      "sha256": "cec8521ec8a6fe3520d292fe171f8544db4d041561170b2acf81420bddcdc568"
     },
     {
       "path": "actors.js",
@@ -153,15 +141,15 @@
     },
     {
       "path": "battle-signals.css",
-      "bytes": 2371,
-      "sha": "4b7b2dffa75ef5c7009d074fe406690f732bad8d",
-      "sha256": "c00a8457b87e3c9aa67d69b69d407340be688af98b6af3766c6804a224438934"
+      "bytes": 3019,
+      "sha": "5d8e9b8d098dd08b8570f4e4c62cdc56ff32a3a5",
+      "sha256": "994794c21bc2e819998ca30ce55d1e582b24ced93e65801433da828ab381df3b"
     },
     {
       "path": "battle-signals.js",
-      "bytes": 9008,
-      "sha": "a9b360f49c7789c834dec82fdad247bcc09ee40b",
-      "sha256": "4891b25497e4453236b50830b2444c541e22fbde7c759435e326fae3d76023e4"
+      "bytes": 9040,
+      "sha": "906eb9c8745d39946b204acd93e7983b4aab508b",
+      "sha256": "20d85bdaae6d95f43e4999e9c4ddb62a88da1ec19fdf4c6556239808720c6cea"
     },
     {
       "path": "campaign.css",
@@ -171,9 +159,15 @@
     },
     {
       "path": "campaign.js",
-      "bytes": 67085,
-      "sha": "d91ca9d19fe5f2ee47b2ccb773008497254d262a",
-      "sha256": "10845b04be12e3ee05874b1a7065e32f16fc8b6d21c176e1518caaeccf2be1cc"
+      "bytes": 69906,
+      "sha": "4565260caae12b47f9a85a5d1a9a9d42a91daf50",
+      "sha256": "c7a2178ef2a8116db684f42d05fe58365d95148436c4b91e623bd8c518459949"
+    },
+    {
+      "path": "challenge.js",
+      "bytes": 2182,
+      "sha": "9e95ae6fe34bef3bc7d803350b1f012b62b42db2",
+      "sha256": "22277023dba3f69af1f9a1e426afe9943206a3dad352c5265c71047cf891d4c9"
     },
     {
       "path": "credits.html",
@@ -231,9 +225,9 @@
     },
     {
       "path": "mission-data.js",
-      "bytes": 3102,
-      "sha": "573b7940bcc2256cd3f680b352c2ad7a8fb2c131",
-      "sha256": "135c29c6abde1c3eb5bae34c1c3080299721bc2803cde195c3aa509f54d473c7"
+      "bytes": 3167,
+      "sha": "c1cded7745936950a198a2f181c8c985d4211b8b",
+      "sha256": "0121eb0214712bcc1a2ce28aa0c72bea3164293a299e9a7528f9ba403cbf7297"
     },
     {
       "path": "opening-missions.js",
@@ -246,6 +240,12 @@
       "bytes": 6203,
       "sha": "bfbdc1e25ece41e7b784a1313444126514302408",
       "sha256": "80224c0da56801b7555c8a6cdaff45fe16306ecde34527bb4159275ea3437af8"
+    },
+    {
+      "path": "README.md",
+      "bytes": 494,
+      "sha": "04e6b4e78830d66aaa3397614e8c2a80d0e36b1d",
+      "sha256": "c82cd60752e89e53abf2a613dcba7ee8b04d9100ec4165c28143cc78101d193e"
     },
     {
       "path": "spectacle.js",
@@ -270,6 +270,12 @@
       "bytes": 6894,
       "sha": "45ee9860c298d20fa72499676fe70353a319a340",
       "sha256": "7bfb9245028fae21af4294090b05031322d053181a748f884ceb8a895cab280f"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.txt",
+      "bytes": 2100,
+      "sha": "328e80ebc44e407eedb7bd5f8e3bd2b89c843864",
+      "sha256": "cec8521ec8a6fe3520d292fe171f8544db4d041561170b2acf81420bddcdc568"
     },
     {
       "path": "vehicles.js",
